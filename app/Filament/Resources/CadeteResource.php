@@ -35,18 +35,11 @@ class CadeteResource extends Resource
             ->schema([
                 Forms\Components\Section::make('Identificación personal')
                     ->schema([
-                        Forms\Components\TextInput::make('catalogo')
-                            ->label('Catálogo')
-                            ->required()
-                            ->unique(
-                                table: 'personas',
-                                column: 'catalogo',
-                                ignorable: fn(?Cadete $record) => $record?->persona
-                            )
-                            ->maxLength(50),
+
                         Forms\Components\FileUpload::make('foto')
                             ->label('Fotografía')
                             ->image()
+                            ->avatar()
                             ->acceptedFileTypes([
                                 'image/jpeg',
                                 'image/png',
@@ -57,8 +50,20 @@ class CadeteResource extends Resource
                             ->visibility('public')
                             ->imageEditor()
                             ->imageCropAspectRatio('1:1')
-                            ->imagePreviewHeight('180'),
-
+                            ->imagePreviewHeight('180')
+                            ->columnSpanFull()
+                            ->alignCenter()
+                        ,
+                        Forms\Components\TextInput::make('catalogo')
+                            ->label('Catálogo')
+                            ->required()
+                            ->unique(
+                                table: 'personas',
+                                column: 'catalogo',
+                                ignorable: fn(?Cadete $record) => $record?->persona
+                            )
+                            ->maxLength(50)
+                            ->columnSpanFull(),
                         Forms\Components\TextInput::make('primer_nombre')
                             ->label('Primer nombre')
                             ->required()
