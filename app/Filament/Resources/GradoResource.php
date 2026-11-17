@@ -17,9 +17,9 @@ class GradoResource extends Resource
 {
     protected static ?string $model = Grado::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
+    protected static ?string $navigationIcon = 'heroicon-o-shield-check';
 
-    protected static ?string $navigationGroup = 'Catálogos';
+    protected static ?string $navigationGroup = 'Gestión de cadetes';
 
     protected static ?string $navigationLabel = 'Grados';
 
@@ -27,7 +27,7 @@ class GradoResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Grados';
 
-    protected static ?int $navigationSort = 1;
+    protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form
     {

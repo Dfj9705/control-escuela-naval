@@ -31,7 +31,7 @@ class AdminPanelProvider extends PanelProvider
             ->brandName('Control Escuela Naval')
             ->brandLogoHeight(fn() => request()->routeIs('filament.admin.auth.login') ? '10rem' : '2.5rem')
             ->colors([
-                'primary' => Color::Indigo,
+                'primary' => Color::hex('#000080'),
                 'secondary' => Color::Slate,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')

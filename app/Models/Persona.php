@@ -15,6 +15,7 @@ class Persona extends Model
         'segundo_nombre',
         'primer_apellido',
         'segundo_apellido',
+        'foto',
         'etnia',
         'grupo_sanguineo',
         'tipo_documento',

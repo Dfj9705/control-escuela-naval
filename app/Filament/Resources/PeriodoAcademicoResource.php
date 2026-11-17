@@ -20,7 +20,7 @@ class PeriodoAcademicoResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-calendar-days';
 
-    protected static ?string $navigationGroup = 'Académico';
+    protected static ?string $navigationGroup = 'Organización académica';
 
     protected static ?string $navigationLabel = 'Períodos académicos';
 

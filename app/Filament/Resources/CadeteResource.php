@@ -17,7 +17,17 @@ class CadeteResource extends Resource
 {
     protected static ?string $model = Cadete::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-user-group';
+
+    protected static ?string $navigationGroup = 'Gestión de cadetes';
+
+    protected static ?string $navigationLabel = 'Cadetes';
+
+    protected static ?string $modelLabel = 'Cadete';
+
+    protected static ?string $pluralModelLabel = 'Cadetes';
+
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {
@@ -26,12 +36,28 @@ class CadeteResource extends Resource
                 Forms\Components\Section::make('Identificación personal')
                     ->schema([
                         Forms\Components\TextInput::make('catalogo')
-                            ->label('Número de catálogo')
+                            ->label('Catálogo')
                             ->required()
-                            ->maxLength(30)
-                            ->columnSpanFull(),
-
-
+                            ->unique(
+                                table: 'personas',
+                                column: 'catalogo',
+                                ignorable: fn(?Cadete $record) => $record?->persona
+                            )
+                            ->maxLength(50),
+                        Forms\Components\FileUpload::make('foto')
+                            ->label('Fotografía')
+                            ->image()
+                            ->acceptedFileTypes([
+                                'image/jpeg',
+                                'image/png',
+                            ])
+                            ->maxSize(2048)
+                            ->disk('public')
+                            ->directory('personas/fotos')
+                            ->visibility('public')
+                            ->imageEditor()
+                            ->imageCropAspectRatio('1:1')
+                            ->imagePreviewHeight('180'),
 
                         Forms\Components\TextInput::make('primer_nombre')
                             ->label('Primer nombre')
@@ -161,20 +187,89 @@ class CadeteResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->modifyQueryUsing(
+                fn(Builder $query) => $query->with([
+                    'persona',
+                    'grado',
+                    'promocion',
+                ])
+            )
             ->columns([
-                //
+                Tables\Columns\ImageColumn::make('persona.foto')
+                    ->label('Fotografía')
+                    ->disk('public')
+                    ->circular()
+                    ->size(50)
+                ,
+                Tables\Columns\TextColumn::make('persona.catalogo')
+                    ->label('Catálogo')
+                    ->searchable()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('persona.primer_nombre')
+                    ->label('Nombre completo')
+                    ->formatStateUsing(
+                        fn(Cadete $record) =>
+                            $record->persona?->nombre_completo ?? 'Sin nombre'
+                    )
+                    ->searchable(query: function (Builder $query, string $search): Builder {
+                        return $query->whereHas('persona', function (Builder $personaQuery) use ($search) {
+                            $personaQuery->where(function (Builder $q) use ($search) {
+                                $q->where('primer_nombre', 'like', "%{$search}%")
+                                    ->orWhere('segundo_nombre', 'like', "%{$search}%")
+                                    ->orWhere('primer_apellido', 'like', "%{$search}%")
+                                    ->orWhere('segundo_apellido', 'like', "%{$search}%");
+                            });
+                        });
+                    }),
+
+                Tables\Columns\TextColumn::make('grado.nombre')
+                    ->label('Grado')
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('promocion.numero')
+                    ->label('Promoción')
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('estado')
+                    ->label('Estado')
+                    ->badge()
+                    ->formatStateUsing(
+                        fn(string $state): string => ucfirst($state)
+                    )
+                    ->color(
+                        fn(string $state): string => match ($state) {
+                            'activo' => 'success',
+                            default => 'gray',
+                        }
+                    ),
+
+                Tables\Columns\TextColumn::make('fecha_ingreso')
+                    ->label('Fecha de ingreso')
+                    ->date('d/m/Y')
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('grado_id')
+                    ->label('Grado')
+                    ->relationship('grado', 'nombre'),
+
+                Tables\Filters\SelectFilter::make('promocion_id')
+                    ->label('Promoción')
+                    ->relationship('promocion', 'numero'),
+
+                Tables\Filters\SelectFilter::make('estado')
+                    ->label('Estado')
+                    ->options([
+                        'activo' => 'Activo',
+                    ]),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->label('Editar'),
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
-            ]);
+            ->bulkActions([]);
     }
 
     public static function getRelations(): array
