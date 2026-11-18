@@ -1,0 +1,395 @@
+tipo,numeral,categoria,descripcion,tipo_sancion,cantidad_base,activo
+leve,1,ASEO PERSONAL,"Faltas al aseo personal. Incluye: No peinarse, Dientes sucios, Oídos sucios, No afeitarse, Manos sucias, Uñas sucias, No cortarse las uñas, No bañarse, Ropa interior sucia.",horas,2,1
+leve,2,ASEO PERSONAL,No cambiar ropa de cama.,horas,2,1
+leve,3,ASEO PERSONAL,Toalla sucia.,horas,2,1
+leve,4,ASEO PERSONAL,Usar fijador de cabello (gelatina) Guardiamarina o Caballero Cadete Naval.,horas,2,1
+leve,5,ASEO PERSONAL,Pijama sucia.,horas,2,1
+leve,6,ASEO PERSONAL,No recortarse el cabello reglamentariamente.,horas,4,1
+leve,7,ASEO PERSONAL,No recortarse el cabello.,horas,6,1
+leve,8,EN SU PRESENTACIÓN PERSONAL Y REVISTA DIARIA,Mal maquillada.,horas,2,1
+leve,9,EN SU PRESENTACIÓN PERSONAL Y REVISTA DIARIA,Usar parches no autorizados.,horas,2,1
+leve,10,EN SU PRESENTACIÓN PERSONAL Y REVISTA DIARIA,No usar los aretes reglamentarios.,horas,2,1
+leve,11,EN SU PRESENTACIÓN PERSONAL Y REVISTA DIARIA,Gorra sucia o demasiado deteriorada.,horas,4,1
+leve,12,EN SU PRESENTACIÓN PERSONAL Y REVISTA DIARIA,"Faltas a la revista. Incluye: escudos sucios, gafete sucio, gafetes deteriorados, galones sucios, hebilla sucia, mal lustrado, mal uniformado, no utilizar gafete, utilizar prendas que no le corresponde, no utilizar parche, no tener pañuelos, pañuelos sucios, ropa interior rota, uniforme sucio, uniforme mal planchado. (4 horas por cada falta).",horas,4,1
+leve,13,EN SU PRESENTACIÓN PERSONAL Y REVISTA DIARIA,No tener tipo de sangre.,horas,4,1
+leve,14,EN SU PRESENTACIÓN PERSONAL Y REVISTA DIARIA,Usar botas no autorizadas o con modificaciones.,horas,4,1
+leve,15,EN SU PRESENTACIÓN PERSONAL Y REVISTA DIARIA,Usar tenis de color no autorizados.,horas,4,1
+leve,16,EN SU DORMITORIO Y MOBILIARIO,Mobiliario desalineado.,horas,2,1
+leve,17,EN SU DORMITORIO Y MOBILIARIO,Cama desalineada.,horas,2,1
+leve,18,EN SU DORMITORIO Y MOBILIARIO,"Mesilla, cajilla, mesa de estudio sucia.",horas,2,1
+leve,19,EN SU DORMITORIO Y MOBILIARIO,Dejar la taquilla cerrada el día de la revista correspondiente.,horas,4,1
+leve,20,EN SU DORMITORIO Y MOBILIARIO,Puesto sucio.,horas,4,1
+leve,21,EN SU DORMITORIO Y MOBILIARIO,Cama mal hecha.,horas,4,1
+leve,22,EN SU DORMITORIO Y MOBILIARIO,Cama sucia.,horas,4,1
+leve,23,EN SU DORMITORIO Y MOBILIARIO,Tener taquilla desordenada.,horas,4,1
+leve,24,EN SU DORMITORIO Y MOBILIARIO,Tener comida o bebidas en el mobiliario.,horas,4,1
+leve,25,EN SU DORMITORIO Y MOBILIARIO,Tener basura en el mobiliario y taquilla.,horas,8,1
+leve,26,EN SU DORMITORIO Y MOBILIARIO,No tener candado con clave numérica.,horas,8,1
+leve,27,EN LOS ESTADOS DE FUERZA,No saber el estado de fuerza.,horas,2,1
+leve,28,EN LOS ESTADOS DE FUERZA,No tener el estado de fuerza.,horas,2,1
+leve,29,EN LOS ESTADOS DE FUERZA,Retardar un estado de fuerza.,horas,6,1
+leve,30,EN LOS ESTADOS DE FUERZA,Dar un dato falso.,horas,8,1
+leve,31,EN REVISTA PREVIO A DESFILES O EJERCICIOS,Cabello mal recogido.,horas,2,1
+leve,32,EN REVISTA PREVIO A DESFILES O EJERCICIOS,Carrillera mal colocada.,horas,2,1
+leve,33,EN REVISTA PREVIO A DESFILES O EJERCICIOS,Chapetón mal puesto.,horas,2,1
+leve,34,EN REVISTA PREVIO A DESFILES O EJERCICIOS,Cuello mal puesto.,horas,2,1
+leve,35,EN REVISTA PREVIO A DESFILES O EJERCICIOS,Falto de interés en el cumplimiento de una orden.,horas,4,1
+leve,36,EN REVISTA PREVIO A DESFILES O EJERCICIOS,Botones sucios.,horas,4,1
+leve,37,EN REVISTA PREVIO A DESFILES O EJERCICIOS,Chapetón sucio.,horas,4,1
+leve,38,EN REVISTA PREVIO A DESFILES O EJERCICIOS,Cinturón sucio.,horas,4,1
+leve,39,EN REVISTA PREVIO A DESFILES O EJERCICIOS,Cordones sucios.,horas,4,1
+leve,40,EN REVISTA PREVIO A DESFILES O EJERCICIOS,Cuello sucio.,horas,4,1
+leve,41,EN REVISTA PREVIO A DESFILES O EJERCICIOS,Galones rotos.,horas,4,1
+leve,42,EN REVISTA PREVIO A DESFILES O EJERCICIOS,Gorra sucia.,horas,4,1
+leve,43,EN REVISTA PREVIO A DESFILES O EJERCICIOS,Guantes sucios o rotos.,horas,4,1
+leve,44,EN REVISTA PREVIO A DESFILES O EJERCICIOS,Madroño sucio.,horas,4,1
+leve,45,EN REVISTA PREVIO A DESFILES O EJERCICIOS,No saber su número de fusil.,horas,4,1
+leve,46,EN REVISTA PREVIO A DESFILES O EJERCICIOS,Cargadores oxidados.,horas,4,1
+leve,47,EN REVISTA PREVIO A DESFILES O EJERCICIOS,Espadín sucio.,horas,4,1
+leve,48,EN REVISTA PREVIO A DESFILES O EJERCICIOS,Tacones desgastados de los botines.,horas,8,1
+leve,49,EN REVISTA PREVIO A DESFILES O EJERCICIOS,Botines deteriorados.,horas,8,1
+leve,50,EN REVISTA PREVIO A DESFILES O EJERCICIOS,Marinera sucia.,horas,12,1
+leve,51,EN FORMACIÓN,Equivocarse en un movimiento.,horas,4,1
+leve,52,EN FORMACIÓN,Llegar tarde a formación.,horas,4,1
+leve,53,EN FORMACIÓN,Mal alineado (a) en formación o en marcha.,horas,4,1
+leve,54,EN FORMACIÓN,Ejecutar un movimiento incorrecto.,horas,4,1
+leve,55,EN FORMACIÓN,Marchar incorrectamente.,horas,4,1
+leve,56,EN FORMACIÓN,No pegar las manos al estar en posición de firmes.,horas,4,1
+leve,57,EN FORMACIÓN,Ponerse firmes incorrectamente.,horas,4,1
+leve,58,EN FORMACIÓN,Perder el paso.,horas,4,1
+leve,59,EN FORMACIÓN,No pedir permiso al ingresar alguna instalación.,horas,4,1
+leve,60,EN FORMACIÓN,Caminar sin marcialidad o perezosamente.,horas,4,1
+leve,61,EN FORMACIÓN,Desordenar en formación.,horas,4,1
+leve,62,EN FORMACIÓN,Falto de porte militar.,horas,4,1
+leve,63,EN FORMACIÓN,Hablar en formación.,horas,4,1
+leve,64,EN FORMACIÓN,Moverse en formación.,horas,4,1
+leve,65,EN FORMACIÓN,No respetar la formación.,horas,4,1
+leve,66,EN FORMACIÓN,Reírse en formación.,horas,4,1
+leve,67,EN FORMACIÓN,Responsable de una mala alineación.,horas,4,1
+leve,68,EN FORMACIÓN,Salir de formación sin autorización.,horas,4,1
+leve,69,EN FORMACIÓN,No mandar a la derecha vista.,horas,4,1
+leve,70,EN FORMACIÓN,Mal sentado (a).,horas,4,1
+leve,71,EN FORMACIÓN,Dormir en formación.,horas,5,1
+leve,72,EN FORMACIÓN,Comer en formación.,horas,6,1
+leve,73,EN FORMACIÓN,No pasar a una formación.,horas,8,1
+leve,74,EN FORMACIÓN,Permitir desordenar en filas.,horas,8,1
+leve,75,EN LA GUARDIA,Botar el fusil.,horas,4,1
+leve,76,EN LA GUARDIA,Contestar incorrectamente el teléfono y/o radio.,horas,4,1
+leve,77,EN LA GUARDIA,Dar parte de novedades incorrectamente.,horas,4,1
+leve,78,EN LA GUARDIA,No pasar una consigna.,horas,4,1
+leve,79,EN LA GUARDIA,No reportar novedades del alcabala a la hora indicada.,horas,4,1
+leve,80,EN LA GUARDIA,Puesto de guardia sucio.,horas,4,1
+leve,81,EN LA GUARDIA,Salvar conducto.,horas,4,1
+leve,82,EN LA GUARDIA,Dar parte incorrectamente a un superior.,horas,4,1
+leve,83,EN LA GUARDIA,Anotar datos equivocados o incorrectos en los libros de guardia.,horas,6,1
+leve,84,EN LA GUARDIA,No cumplir con las obligaciones de su guardia.,horas,6,1
+leve,85,EN LA GUARDIA,No saber la seña o contraseña en su puesto de guardia de centinela.,horas,8,1
+leve,86,EN LA GUARDIA,Relevar incorrectamente la guardia.,horas,8,1
+leve,87,EN LA GUARDIA,Elaborar mal los libros de la Guardia.,horas,8,1
+leve,88,EN LA GUARDIA,Falto de control con su guardia.,horas,8,1
+leve,89,EN LA GUARDIA,Llevar útiles de estudio estando de guardia de centinela.,horas,10,1
+leve,90,EN LA GUARDIA,No operar personalmente los libros de la guardia.,horas,10,1
+leve,91,EN REVISTA DE FRANCOS,No portar su carné.,horas,4,1
+leve,92,EN REVISTA DE FRANCOS,Llevar bolsas de viaje estando de marinera.,horas,4,1
+leve,93,EN REVISTA DE FRANCOS,Llevar uniforme militar sin autorización.,horas,8,1
+leve,94,EN SU CONDUCTA MILITAR Y MORAL,Descuidado con sus útiles personales.,horas,4,1
+leve,95,EN SU CONDUCTA MILITAR Y MORAL,Llamar a un Guardiamarina o Cadete Naval por sobrenombre.,horas,4,1
+leve,96,EN SU CONDUCTA MILITAR Y MORAL,No dar parte de asistir a la enfermería.,horas,4,1
+leve,97,EN SU CONDUCTA MILITAR Y MORAL,No dar parte de haber cumplido una orden.,horas,4,1
+leve,98,EN SU CONDUCTA MILITAR Y MORAL,No depositar basura en los recipientes destinados para el efecto.,horas,4,1
+leve,99,EN SU CONDUCTA MILITAR Y MORAL,Tirar basura.,horas,4,1
+leve,100,EN SU CONDUCTA MILITAR Y MORAL,Pasar por la grama.,horas,4,1
+leve,101,EN SU CONDUCTA MILITAR Y MORAL,Perezoso (a) al acudir a un llamado.,horas,4,1
+leve,102,EN SU CONDUCTA MILITAR Y MORAL,Hacer mal un correctivo.,horas,4,1
+leve,103,EN SU CONDUCTA MILITAR Y MORAL,No portar la tabla de sanciones disciplinarias en el bolsillo de la camisa.,horas,4,1
+leve,104,EN SU CONDUCTA MILITAR Y MORAL,Omitir el saludo al paso de un cortejo fúnebre.,horas,5,1
+leve,105,EN SU CONDUCTA MILITAR Y MORAL,Tener las manos en los bolsillos.,horas,5,1
+leve,106,EN SU CONDUCTA MILITAR Y MORAL,"No cumplir con sus obligaciones (cuartelero, encargado de semestre, de sección).",horas,6,1
+leve,107,EN SU CONDUCTA MILITAR Y MORAL,No cumplir con las obligaciones de su empleo (galonistas).,horas,8,1
+leve,108,EN SU CONDUCTA MILITAR Y MORAL,No cumplir con sus obligaciones (como cadete razo).,horas,8,1
+leve,109,EN SU CONDUCTA MILITAR Y MORAL,Contestar inadecuadamente a un catedrático.,horas,8,1
+leve,110,EN SU CONDUCTA MILITAR Y MORAL,Falto de espíritu militar.,horas,8,1
+leve,111,EN SU CONDUCTA MILITAR Y MORAL,Dar muestras de inconformidad a un galonista.,horas,10,1
+leve,112,EN SU CONDUCTA MILITAR Y MORAL,Dormirse en una actividad protocolaria.,horas,10,1
+leve,113,EN SU CONDUCTA MILITAR Y MORAL,Falto de compañerismo.,horas,10,1
+leve,114,EN SU CONDUCTA MILITAR Y MORAL,Llegar tarde a una actividad deportiva.,horas,10,1
+leve,115,EN CLASES,Falto de atención en clases.,horas,5,1
+leve,116,EN CLASES,No entregar un trabajo.,horas,5,1
+leve,117,EN CLASES,Llevar comida en el maletín hacia las aulas o módulos.,horas,6,1
+leve,118,EN CLASES,Llegar tarde a clases.,horas,6,1
+leve,119,EN CLASES,Salir de clases sin autorización.,horas,6,1
+leve,120,EN CLASES,"Aula sucia, siendo cuartelero (a).",horas,6,1
+leve,121,EN CLASES,Dormir en clases.,horas,6,1
+leve,122,EN CLASES,Comer en clases.,horas,8,1
+leve,123,EN CLASES,Desordenar en clases.,horas,8,1
+leve,124,EN CLASES,Jugar en clases.,horas,8,1
+leve,125,EN CLASES,No llevar útiles a clases.,horas,8,1
+leve,126,EN CLASES,Tener comida o bebidas procesadas en el aula.,horas,8,1
+leve,127,EN EDUCACIÓN Y CORTESÍA,Proferir vocablos soeces.,horas,5,1
+leve,128,EN SU ARMAMENTO Y EQUIPO,Descuidado con su equipo.,horas,8,1
+leve,129,EN SU ARMAMENTO Y EQUIPO,Equipo sucio.,horas,8,1
+leve,130,EN SU ARMAMENTO Y EQUIPO,Fusil sucio.,horas,8,1
+leve,131,EN SU ARMAMENTO Y EQUIPO,Fusil oxidado.,horas,12,1
+leve,132,EN SU ARMAMENTO Y EQUIPO,No devolver equipo militar después de ejercicio.,horas,24,1
+leve,133,EN SU CONDUCTA EN LA CALLE,Falto de cortesía.,horas,10,1
+leve,134,EN SU CONDUCTA EN LA CALLE,Mal uniformado.,horas,10,1
+leve,135,EN SU CONDUCTA EN LA CALLE,No dar parte de novedades después de franco y/o vacaciones.,horas,10,1
+leve,136,EN SU CONDUCTA EN LA CALLE,Comportarse incorrectamente en actos religiosos.,horas,10,1
+leve,137,EN SU CONDUCTA EN LA CALLE,Recostarse en paredes o postes estando uniformados.,horas,10,1
+leve,138,EN SU CONDUCTA EN LA CALLE,Saciar necesidades fisiológicas en lugares no adecuados.,horas,10,1
+leve,139,EN SU CONDUCTA EN LA CALLE,Usar ropa civil no adecuada a su condición de Cadete.,horas,10,1
+leve,140,VARIOS,Hacer uso del teléfono público en horas no autorizadas.,horas,5,1
+leve,141,VARIOS,No razonar su pase de licencia.,horas,5,1
+leve,142,VARIOS,Tomarse atribuciones que no le corresponden.,horas,5,1
+leve,143,VARIOS,No mandar firmes o atención para dar parte.,horas,6,1
+leve,144,VARIOS,No ponerse a la orden.,horas,6,1
+leve,145,VARIOS,No saludar.,horas,6,1
+leve,146,VARIOS,No supervisar.,horas,6,1
+leve,147,VARIOS,Ponerse incorrectamente a la orden.,horas,6,1
+leve,148,VARIOS,Saludar incorrectamente.,horas,6,1
+leve,149,VARIOS,No cumplir una consigna.,horas,6,1
+leve,150,VARIOS,No cumplir un horario.,horas,6,1
+leve,151,VARIOS,No dar parte al avanzar un superior.,horas,6,1
+leve,152,VARIOS,No rendir parte de novedades.,horas,6,1
+leve,153,VARIOS,Tener el cuarto de ayudas de entrenamiento desordenado o sucio (cuartelero) (a).,horas,6,1
+leve,154,VARIOS,Dormirse en el bus cuando va a una comisión.,horas,8,1
+leve,155,VARIOS,No razonar pase de vacaciones.,horas,8,1
+leve,156,VARIOS,"No hacerse presente a un (01) Superior estando de Licencia, franco o vacaciones o permisos en lugares públicos.",horas,8,1
+leve,157,VARIOS,No acudir al llamado de un (01) Señor (a) Oficial.,horas,8,1
+leve,158,VARIOS,Efectuar compras en las tiendas aledañas a la Escuela Naval.,horas,8,1
+leve,159,VARIOS,Mandar a pedir comida servicio a domicilio.,horas,8,1
+leve,160,VARIOS,No entregar documentos personales para la actualización de récord.,horas,8,1
+leve,161,VARIOS,No tramitar documento de identificación personal para cumplir 18 años.,horas,8,1
+leve,162,VARIOS,No tener traje deportivo reglamentario.,horas,8,1
+leve,163,VARIOS,Utilizar uniforme con apellidos de otro cadete.,horas,8,1
+leve,164,VARIOS,Ingresar a las comandancias de compañía o comandancia de cuerpo sin autorización.,horas,8,1
+leve,165,VARIOS,No actualizar organigrama de su pelotón.,horas,8,1
+leve,166,VARIOS,Equivocarse en un movimiento en una presentación ante el público.,horas,8,1
+leve,167,VARIOS,No darse a respetar.,horas,8,1
+leve,168,VARIOS,Usar falda corta.,horas,8,1
+leve,169,VARIOS,Utilizar vestuario demasiado ajustado.,horas,8,1
+leve,170,VARIOS,Hacer tareas o cosas indebidas que no corresponden al curso que se imparte.,horas,8,1
+leve,171,VARIOS,No llevar implementos deportivos a clases deportivas.,horas,8,1
+leve,172,VARIOS,No dar parte de una novedad.,horas,8,1
+leve,173,VARIOS,Dar excusas.,horas,8,1
+leve,174,VARIOS,No marcar su ropa.,horas,8,1
+leve,175,VARIOS,No dejar revista.,horas,8,1
+leve,176,VARIOS,Pintarse el cabello.,horas,8,1
+leve,177,VARIOS,No llevar computadora o material necesario para realizarse un examen parcial o final.,horas,10,1
+leve,178,VARIOS,Omitir dar parte de encontrarse rebajado de actividades deportivas.,horas,10,1
+leve,179,VARIOS,Omitir dar parte de haber egresado de enfermería.,horas,10,1
+leve,180,VARIOS,Quien reciba visitas en el CMM; sin autorización.,horas,10,1
+leve,181,VARIOS,Indiscreto.,horas,10,1
+leve,182,VARIOS,Irresponsable.,horas,10,1
+leve,183,VARIOS,Descuidado con su clave de acceso a los diferentes sistemas del plantel.,horas,10,1
+leve,184,VARIOS,Saludarse incorrectamente entre Cadetes.,horas,10,1
+leve,185,VARIOS,No ponerse firmes al izar o arriar la Bandera Nacional y/o relevo de la Guardia.,horas,10,1
+leve,186,VARIOS,No usar ropa interior.,horas,12,1
+leve,187,VARIOS,No tener su parqueo limpio.,horas,12,1
+leve,188,VARIOS,No tener medidas de seguridad y de emergencia dentro de su vehículo.,horas,12,1
+leve,189,VARIOS,No parquearse en el parqueo asignado.,horas,12,1
+leve,190,VARIOS,Mantener su vehículo o moto sucio.,horas,12,1
+leve,191,VARIOS,Hacer uso de la cámara de cadetes o tienda estando en la pista.,horas,12,1
+leve,192,VARIOS,No dar parte de pretensiones sentimentales.,horas,12,1
+leve,193,VARIOS,No utilizar la calzoneta reglamentaria en la piscina.,horas,12,1
+leve,194,VARIOS,Usar el pantalón dentro de las botas.,horas,12,1
+leve,195,VARIOS,Hacer uso inadecuado de las redes sociales.,horas,12,1
+leve,196,VARIOS,No usar ropa interior reglamentaria.,horas,12,1
+leve,197,VARIOS,Descuidado con documentos personales.,horas,12,1
+leve,198,VARIOS,Falto de seriedad en una presentación en público.,horas,12,1
+leve,199,VARIOS,Permitir que le falten el respeto.,horas,20,1
+leve,200,VARIOS,Tener artículos militares dentro del vehículo.,horas,72,1
+leve,201,VARIOS,Quien estando de licencia o vacaciones tenga un accidente y no de parte del mismo.,horas,72,1
+leve,202,VARIOS,Quien se encuentre en su vehículo o parqueo en horarios no establecidos.,horas,72,1
+leve,203,VARIOS,Utilizar su vehículo para guardar cosas personales o de terceros.,horas,72,1
+grave,1,EN SU ARMAMENTO Y EQUIPO,Abandonar prendas de equipo militar.,demeritos,10,1
+grave,2,EN SU ARMAMENTO Y EQUIPO,Descuidado (a) con útiles del estado.,demeritos,10,1
+grave,3,EN SU ARMAMENTO Y EQUIPO,Extraviar equipo militar (sujetándose al pago correspondiente) que no sea armamento.,demeritos,10,1
+grave,4,EN SU ARMAMENTO Y EQUIPO,Extraviar piezas o accesorios del armamento (Sujetándose al pago correspondiente).,demeritos,10,1
+grave,5,EN SU ARMAMENTO Y EQUIPO,Dar uso inadecuado a su fusil o espadín.,demeritos,15,1
+grave,6,EN SU ARMAMENTO Y EQUIPO,"Extraviar equipo militar en campaña o ejercicio, sujetándose al pago correspondiente. Que no sea armamento.",demeritos,20,1
+grave,7,EN SU ARMAMENTO Y EQUIPO,Extraviar útiles del estado (dependiendo de la gravedad de la falta se le sujetará a los tribunales).,demeritos,20,1
+grave,8,EN SU ARMAMENTO Y EQUIPO,Prestar armamento y equipo sin autorización.,demeritos,20,1
+grave,9,EN SU ARMAMENTO Y EQUIPO,Extraviar armamento y munición.,demeritos,20,1
+grave,10,EN SU ARMAMENTO Y EQUIPO,Abandonar su armamento.,demeritos,20,1
+grave,11,EN SU ARMAMENTO Y EQUIPO,"Disparar armamento por descuido e irresponsabilidad, si hubiere daños materiales deberá cancelar los costos correspondientes.",demeritos,20,1
+grave,12,EN SU ARMAMENTO Y EQUIPO,"Extraviar el espadín, (sujetándose al pago correspondiente).",demeritos,20,1
+grave,13,EN SU ARMAMENTO Y EQUIPO,Tener munición de cualquier calibre.,demeritos,25,1
+grave,14,EN SU ARMAMENTO Y EQUIPO,Disparar armamento por descuido e irresponsabilidad si hubiera heridos (Sin perjuicio de la sanción penal que corresponda).,demeritos,30,1
+grave,15,EN FORMACIÓN O ACTIVIDADES,Evadir responsabilidades.,demeritos,10,1
+grave,16,EN FORMACIÓN O ACTIVIDADES,Evadirse de formación.,demeritos,10,1
+grave,17,EN FORMACIÓN O ACTIVIDADES,Reñir con otro Cadete de superior a subalterno o viceversa.,demeritos,30,1
+grave,18,EN FORMACIÓN O ACTIVIDADES,Reñir con otro Cadete del mismo semestre que no sea galonista.,demeritos,15,1
+grave,19,EN LA GUARDIA,Presentarse tarde a recibir y/o relevar guardia hasta 2 horas.,demeritos,5,1
+grave,20,EN LA GUARDIA,Presentarse tarde a recibir y/o relevar guardia más de 2 horas en adelante.,demeritos,10,1
+grave,21,EN LA GUARDIA,Alterar datos en los libros de control de guardia.,demeritos,10,1
+grave,22,EN LA GUARDIA,Anotar datos falsos en los libros de la Jefatura de Guardia .,demeritos,10,1
+grave,23,EN LA GUARDIA,Dormir en la guardia.,demeritos,15,1
+grave,24,EN LA GUARDIA,Cambiar guardias sin autorización.,demeritos,15,1
+grave,25,EN LA GUARDIA,Abandonar su puesto de guardia.,demeritos,20,1
+grave,26,EN LA GUARDIA,Cambiar guardia abusando de autoridad o antigüedad.,demeritos,20,1
+grave,27,EN LA GUARDIA,Levantar a otro (a) Cadete para que le haga su guardia.,demeritos,20,1
+grave,28,EN LA GUARDIA,No presentarse a recibir guardia.,demeritos,30,1
+grave,29,EN LA GUARDIA,Retirarse franco después de cambiar guardia de cuartelero sin autorización.,demeritos,30,1
+grave,30,EN LA GUARDIA,Recibir visitas estando de guardia.,demeritos,8,1
+grave,31,EN EL CUMPLIMIENTO DE SANCIONES,No pasar reportados.,demeritos,5,1
+grave,32,EN EL CUMPLIMIENTO DE SANCIONES,No reportarse.,demeritos,5,1
+grave,33,EN EL CUMPLIMIENTO DE SANCIONES,No entregar el reporte de una sanción.,demeritos,5,1
+grave,34,EN EL CUMPLIMIENTO DE SANCIONES,No presentarse a cumplir arresto por rojos.,demeritos,20,1
+grave,35,EN DESFILES Y EJERCICIOS DE ORDEN CERRADO,Falto de porte militar en una presentación en público.,demeritos,10,1
+grave,36,EN DESFILES Y EJERCICIOS DE ORDEN CERRADO,Hablar en formación en una presentación en público.,demeritos,10,1
+grave,37,EN DESFILES Y EJERCICIOS DE ORDEN CERRADO,Dormirse en una presentación.,demeritos,10,1
+grave,38,EN DESFILES Y EJERCICIOS DE ORDEN CERRADO,Bonete o Gorra rota o con leyenda no autorizada (solo nombre y/o No. de antigüedad).,demeritos,8,1
+grave,39,EN DESFILES Y EJERCICIOS DE ORDEN CERRADO,Salir de filas en una presentación.,demeritos,8,1
+grave,40,EN DESFILES Y EJERCICIOS DE ORDEN CERRADO,Desfilar con el fusil en posición equivocada al resto de cadetes.,demeritos,10,1
+grave,41,EN DESFILES Y EJERCICIOS DE ORDEN CERRADO,Botar su fusil o cualquier prenda de su uniforme en comisión y/o presentación.,demeritos,10,1
+grave,42,EN DESFILES Y EJERCICIOS DE ORDEN CERRADO,Desmayarse en una presentación.,demeritos,10,1
+grave,43,EN SU CONDUCTA EN LA CALLE,"Conducir vehículo o motocicleta sin licencia estando de licencia, franco o vacaciones.",demeritos,5,1
+grave,44,EN SU CONDUCTA EN LA CALLE,"Comer en lugares no acordes a su condición de Cadete, estando uniformado.",demeritos,10,1
+grave,45,EN SU CONDUCTA EN LA CALLE,Efectuar compras en las tiendas aledañas a la Guardia de Prevención.,demeritos,10,1
+grave,46,EN SU CONDUCTA EN LA CALLE,"Aplicar correctivos físicos sin causa justificada, abusando de su autoridad.",demeritos,15,1
+grave,47,EN SU CONDUCTA EN LA CALLE,Viajar en la palangana de pick-up o en motocicleta estando uniformado o de traje bléiser.,demeritos,20,1
+grave,48,"EN CLASES, EJERCICIOS O VISITAS MILITARES","Evadirse de actividades académicas o militares (visitas de estudio, ejercicios) o programadas por la Escuela Naval de Guatemala.",demeritos,30,1
+grave,49,"EN CLASES, EJERCICIOS O VISITAS MILITARES",Copiar en examen (se le pondrá la calificación de “0” en la nota).,demeritos,30,1
+grave,50,"EN CLASES, EJERCICIOS O VISITAS MILITARES","Usar material ilícito en examen, parcial o final (Se le pondrá la calificación “0” en la nota).",demeritos,30,1
+grave,51,"EN CLASES, EJERCICIOS O VISITAS MILITARES",Evadirse de examen (se le pondrá la calificación de “0” en la nota).,demeritos,20,1
+grave,52,"EN CLASES, EJERCICIOS O VISITAS MILITARES",No asistir sin justificación a clases académicas militares y/o deportivas.,demeritos,4,1
+grave,53,"EN CLASES, EJERCICIOS O VISITAS MILITARES",Evadirse de clases.,demeritos,10,1
+grave,54,"EN CLASES, EJERCICIOS O VISITAS MILITARES",No llevar material y/o equipo necesario a crucero de instrucción.,demeritos,5,1
+grave,55,"EN CLASES, EJERCICIOS O VISITAS MILITARES",No asistir a clases sin autorización.,demeritos,10,1
+grave,56,"EN CLASES, EJERCICIOS O VISITAS MILITARES",Demostrar apatía en crucero o ejercicio militar.,demeritos,10,1
+grave,57,"EN CLASES, EJERCICIOS O VISITAS MILITARES",Hablar por teléfono durante la guardia de mar.,demeritos,15,1
+grave,58,"EN CLASES, EJERCICIOS O VISITAS MILITARES",Retardar una comisión o ejercicio militar.,demeritos,15,1
+grave,59,"EN CLASES, EJERCICIOS O VISITAS MILITARES","Uso de cualquier dispositivo electrónico para accesar a las redes sociales, juegos electrónicos y/o páginas restringidas por la Escuela Naval de Guatemala durante la guardia de mar.",demeritos,25,1
+grave,60,"EN CLASES, EJERCICIOS O VISITAS MILITARES",Presentar trabajos iguales.,demeritos,20,1
+grave,61,"EN CLASES, EJERCICIOS O VISITAS MILITARES",Negarse a realizar un ejercicio o prueba de confianza.,demeritos,20,1
+grave,62,EN SU CONDUCTA MILITAR Y MORAL,Dar demostraciones de adulación.,demeritos,5,1
+grave,63,EN SU CONDUCTA MILITAR Y MORAL,Dar mal ejemplo.,demeritos,8,1
+grave,64,EN SU CONDUCTA MILITAR Y MORAL,Realizar ventas no autorizadas en las instalaciones de la E.N.G.,demeritos,8,1
+grave,65,EN SU CONDUCTA MILITAR Y MORAL,Destruir útiles del estado sin perjuicio del pago correspondiente.,demeritos,8,1
+grave,66,EN SU CONDUCTA MILITAR Y MORAL,Hacer uso de la computadora estando de guardia.,demeritos,8,1
+grave,67,EN SU CONDUCTA MILITAR Y MORAL,No cumplir una orden.,demeritos,10,1
+grave,68,EN SU CONDUCTA MILITAR Y MORAL,No cancelar sus deudas.,demeritos,10,1
+grave,69,EN SU CONDUCTA MILITAR Y MORAL,Falto de porte militar en vía pública estando uniformado.,demeritos,15,1
+grave,70,EN SU CONDUCTA MILITAR Y MORAL,"Ser sorprendido en lugares indebidos (Cocina, Despensa, Edificio administrativo, Cámara de Oficiales, Club de Oficiales, Modulo del sexo opuesto, Sollado de P.N.O. o P.N.E, Pañol de Buceo, Área de talleres, Comandos aledaños del área.",demeritos,10,1
+grave,71,EN SU CONDUCTA MILITAR Y MORAL,Permanecer o estar en áreas restrictas.,demeritos,10,1
+grave,72,EN SU CONDUCTA MILITAR Y MORAL,Presentarse tarde a una comisión.,demeritos,10,1
+grave,73,EN SU CONDUCTA MILITAR Y MORAL,Abuso de autoridad.,demeritos,10,1
+grave,74,EN SU CONDUCTA MILITAR Y MORAL,"Presentarse tarde de franco, licencia, permiso y/o vacaciones hasta 1 hora.",demeritos,10,1
+grave,75,EN SU CONDUCTA MILITAR Y MORAL,Censurar o criticar la conducta de un oficial.,demeritos,10,1
+grave,76,EN SU CONDUCTA MILITAR Y MORAL,No dar parte de extraviar su carné de identificación o el de otro (a) Cadete (Denuncia P.N.C. y M.P.).,demeritos,10,1
+grave,77,EN SU CONDUCTA MILITAR Y MORAL,Por aplicar correctivos no autorizados.,demeritos,10,1
+grave,78,EN SU CONDUCTA MILITAR Y MORAL,"Retirarse franco, estando rebajado y/o guardia.",demeritos,10,1
+grave,79,EN SU CONDUCTA MILITAR Y MORAL,Tratar de engañar.,demeritos,10,1
+grave,80,EN SU CONDUCTA MILITAR Y MORAL,Retirarse franco estando recluido en la enfermería.,demeritos,10,1
+grave,81,EN SU CONDUCTA MILITAR Y MORAL,"Demostrar conducta impropia a su condición de Cadete (Dirigir vocablos soeces, perder el porte militar, hacer necesidades fisiológicas en lugares indebidos, comportarse sin escrúpulos, perder las normas de cortesía).",demeritos,15,1
+grave,82,EN SU CONDUCTA MILITAR Y MORAL,Demostrar parcialidad en beneficio o perjuicio de un (a) Cadete.,demeritos,15,1
+grave,83,EN SU CONDUCTA MILITAR Y MORAL,Dirigirse incorrectamente a un galonista.,demeritos,15,1
+grave,84,EN SU CONDUCTA MILITAR Y MORAL,Murmurar de las disposiciones de un galonista.,demeritos,15,1
+grave,85,EN SU CONDUCTA MILITAR Y MORAL,Pedir apoyo de un familiar o amigo para quitarse las sanciones impuestas a su persona en busca de un beneficio propio.,demeritos,15,1
+grave,86,EN SU CONDUCTA MILITAR Y MORAL,"Utilizar aplicaciones para evadir los sistemas de seguridad de informática (Hangus, Messenger, WhatsApp y otros).",demeritos,15,1
+grave,87,EN SU CONDUCTA MILITAR Y MORAL,Retirarse a dormir a la cuadra estando en la pista.,demeritos,15,1
+grave,88,EN SU CONDUCTA MILITAR Y MORAL,"Tomarse familiaridades con oficiales, catedráticos, especialistas y/o tropa.",demeritos,15,1
+grave,89,EN SU CONDUCTA MILITAR Y MORAL,No asistir a una actividad programada.,demeritos,15,1
+grave,90,EN SU CONDUCTA MILITAR Y MORAL,No cumplir una orden del Señor Ministro de la Defensa Nacional o Jefe del Estado Mayor de la Defensa Nacional.,demeritos,15,1
+grave,91,EN SU CONDUCTA MILITAR Y MORAL,Abandonar su guerrera.,demeritos,15,1
+grave,92,EN SU CONDUCTA MILITAR Y MORAL,Tomarse fotografías desnudas (os) o en ropa interior y publicarlas en las redes sociales.,demeritos,15,1
+grave,93,EN SU CONDUCTA MILITAR Y MORAL,"Obligar al cadete que ingiera productos no alimenticios, que ponga en riesgo la salud.",demeritos,15,1
+grave,94,EN SU CONDUCTA MILITAR Y MORAL,"Visitar lugares no acordes a su condición de Cadete estando uniformado (Prostíbulos, bares, cantinas, juegos de azar).",demeritos,15,1
+grave,95,EN SU CONDUCTA MILITAR Y MORAL,No dar parte del retraso de vuelo durante el tiempo autorizado para salir del país.,demeritos,20,1
+grave,96,EN SU CONDUCTA MILITAR Y MORAL,"Presentarse de civil de goce de franco, licencia, permiso y/o vacaciones sin autorización.",demeritos,20,1
+grave,97,EN SU CONDUCTA MILITAR Y MORAL,"Hablar en examen, con la finalidad de pedir copia.",demeritos,20,1
+grave,98,EN SU CONDUCTA MILITAR Y MORAL,"Dar demostraciones deshonestas, que violen la moral y ética. (Estar desnudo fuera de su pelotón, mirar a escondidas a cadetes del sexo opuesto en ropa interior).",demeritos,20,1
+grave,99,EN SU CONDUCTA MILITAR Y MORAL,Encubrir una falta.,demeritos,20,1
+grave,100,EN SU CONDUCTA MILITAR Y MORAL,Estar en páginas indebidas (redes sociales de chat y/o páginas pornográficas).,demeritos,25,1
+grave,101,EN SU CONDUCTA MILITAR Y MORAL,"Excederse en el goce de franco, licencia, permiso y/o vacaciones de 1 hora hasta 8 horas.",demeritos,20,1
+grave,102,EN SU CONDUCTA MILITAR Y MORAL,"Excederse en el goce de franco, licencia, permiso y/o vacaciones de 8 horas hasta 24 horas.",demeritos,30,1
+grave,103,EN SU CONDUCTA MILITAR Y MORAL,Faltarle el respeto a un Cadete.,demeritos,20,1
+grave,104,EN SU CONDUCTA MILITAR Y MORAL,Tener y/o fumar cigarrillos en el interior de la E.N.G.,demeritos,20,1
+grave,105,EN SU CONDUCTA MILITAR Y MORAL,Realizar actos y/o tomar fotografías que comprometan a la Escuela Naval de Guatemala.,demeritos,20,1
+grave,106,EN SU CONDUCTA MILITAR Y MORAL,Girar cheques sin fondos.,demeritos,20,1
+grave,107,EN SU CONDUCTA MILITAR Y MORAL,Por depilarse las cejas (masculino).,demeritos,20,1
+grave,108,EN SU CONDUCTA MILITAR Y MORAL,Falto de carácter.,demeritos,20,1
+grave,109,EN SU CONDUCTA MILITAR Y MORAL,Engañar a un Oficial.,demeritos,20,1
+grave,110,EN SU CONDUCTA MILITAR Y MORAL,Fingir enfermedades o lesión.,demeritos,20,1
+grave,111,EN SU CONDUCTA MILITAR Y MORAL,Mentir.,demeritos,20,1
+grave,112,EN SU CONDUCTA MILITAR Y MORAL,No presentarse a cumplir una comisión.,demeritos,20,1
+grave,113,EN SU CONDUCTA MILITAR Y MORAL,"Poseer archivos indecorosos en su condición de cadete en dispositivos personales (Pornografía, documentos con ideologías contradictorias, archivos que denigren la dignidad del personal militar).",demeritos,20,1
+grave,114,EN SU CONDUCTA MILITAR Y MORAL,Utilizar de forma inadecuada de las redes sociales.,demeritos,20,1
+grave,115,EN SU CONDUCTA MILITAR Y MORAL,Utilizar las redes sociales de forma inadecuada desprestigiando el nombre de la E.N.G.,demeritos,30,1
+grave,116,EN SU CONDUCTA MILITAR Y MORAL,Tallar el pantalón de los uniformes de manera inadecuada (Pachucos).,demeritos,20,1
+grave,117,EN SU CONDUCTA MILITAR Y MORAL,Alterar la dirección de las cámaras de seguridad.,demeritos,20,1
+grave,118,EN SU CONDUCTA MILITAR Y MORAL,Realizar vallas en actividades personales o familiares no autorizadas.,demeritos,20,1
+grave,119,EN SU CONDUCTA MILITAR Y MORAL,"Imprudencia temeraria (armamento, vehículo, entre otros).",demeritos,20,1
+grave,120,EN SU CONDUCTA MILITAR Y MORAL,"Publicar o compartir fotografías, videos que comprometan a la Escuela Naval de Guatemala y al Ejército de Guatemala.",demeritos,20,1
+grave,121,EN SU CONDUCTA MILITAR Y MORAL,Tener teléfono celular dentro de las instalaciones de la Escuela Naval de Guatemala.,demeritos,25,1
+grave,122,EN SU CONDUCTA MILITAR Y MORAL,Uso de cualquier dispositivo electrónico para accesar a las redes sociales y/o páginas restringidas por la Escuela Naval de Guatemala.,demeritos,20,1
+grave,123,EN SU CONDUCTA MILITAR Y MORAL,Ingerir suplementos que aumentan el rendimiento físico y/o crecimiento muscular (esteroides y anabólicos no autorizados).,demeritos,20,1
+grave,124,EN SU CONDUCTA MILITAR Y MORAL,No respetar una orden de rebajo médico y poner en riesgo su integridad física.,demeritos,20,1
+grave,125,EN SU CONDUCTA MILITAR Y MORAL,Tener instalado en la computadora un programa informático que infrinja las políticas de restricción de la red de internet de la Escuela Naval de Guatemala.,demeritos,20,1
+grave,126,EN SU CONDUCTA MILITAR Y MORAL,Permitir que Cadetes del sexo opuesto ingrese a los dormitorios.,demeritos,20,1
+grave,127,EN SU CONDUCTA MILITAR Y MORAL,Ingerir bebidas alcohólicas y/o fumar estando uniformado.,demeritos,20,1
+grave,128,EN SU CONDUCTA MILITAR Y MORAL,Poner en peligro la seguridad e integridad de los Cadetes.,demeritos,20,1
+grave,129,EN SU CONDUCTA MILITAR Y MORAL,"Perder y/o extraviar el uniforme (gala o diario) o artículos de este, no eximiendo del costo.",demeritos,20,1
+grave,130,EN SU CONDUCTA MILITAR Y MORAL,Extraer o intentar extraer equipo militar de la Escuela Naval de Guatemala.,demeritos,25,1
+grave,131,EN SU CONDUCTA MILITAR Y MORAL,Salvar conducto con el Alto Mando del Ejército.,demeritos,25,1
+grave,132,EN SU CONDUCTA MILITAR Y MORAL,Faltarle el respeto a un catedrático.,demeritos,30,1
+grave,133,EN SU CONDUCTA MILITAR Y MORAL,Utilizar cigarrillos electrónicos o aparatos similares.,demeritos,25,1
+grave,134,EN SU CONDUCTA MILITAR Y MORAL,Abrir diapositivas o material de ayuda en la plataforma GES durante un examen.,demeritos,30,1
+grave,135,EN SU CONDUCTA MILITAR Y MORAL,"Ingresar al dormitorio de Cadetes del sexo opuesto, sin autorización.",demeritos,30,1
+grave,136,EN SU CONDUCTA MILITAR Y MORAL,Al momento de un incidente o accidente en la vía pública sea sorprendido con aliento a licor estando uniformado.,demeritos,30,1
+grave,137,EN SU CONDUCTA MILITAR Y MORAL,Presentarse a la E.N.G. con aliento a licor.,demeritos,30,1
+grave,138,EN SU CONDUCTA MILITAR Y MORAL,Ser sorprendido durmiendo con personal femenino dentro de la carpa durante un ejercicio y/o pista. (Sanción para ambos Cadetes).,demeritos,30,1
+grave,139,EN SU CONDUCTA MILITAR Y MORAL,Dar indicios o insinuaciones de relaciones sentimentales o amorosas.,demeritos,30,1
+grave,140,EN SU CONDUCTA MILITAR Y MORAL,"Dar muestras de inconformidad a un oficial (de forma verbal, gestos y ademanes).",demeritos,30,1
+grave,141,EN SU CONDUCTA MILITAR Y MORAL,Evadirse de reconocimiento médico.,demeritos,30,1
+grave,142,EN SU CONDUCTA MILITAR Y MORAL,Girar cheques sin fondos por segunda ocasión.,demeritos,30,1
+grave,143,EN SU CONDUCTA MILITAR Y MORAL,Reincidencia en tener instalado en la computadora un programa informático que infrinja las políticas de restricción de la red de internet de la Escuela Naval.,demeritos,20,1
+grave,144,EN SU CONDUCTA MILITAR Y MORAL,Quebrantar arresto.,demeritos,30,1
+grave,145,EN SU CONDUCTA MILITAR Y MORAL,Salir del país sin autorización.,demeritos,30,1
+grave,146,EN SU CONDUCTA MILITAR Y MORAL,"Con actitudes aduladoras a un superior o subalterno, obtenga o trate de obtener beneficios personales.",demeritos,30,1
+grave,147,EN SU CONDUCTA MILITAR Y MORAL,"Provocar escándalo en vía pública, sin perjuicio que le exima de responsabilidades civiles y penales.",demeritos,40,1
+gravisima,1,FALTAS GRAVÍSIMAS,Doble Apercibimiento.,especial,,0
+gravisima,2,FALTAS GRAVÍSIMAS,Agredir físicamente a un Cadete.,especial,,0
+gravisima,3,FALTAS GRAVÍSIMAS,Acumulación de Deméritos.,especial,,0
+gravisima,4,FALTAS GRAVÍSIMAS,Agredir físicamente a un superior.,especial,,0
+gravisima,5,FALTAS GRAVÍSIMAS,Sustraiga información física y/o digital de cualquier equipo de cómputo e instalaciones de la Escuela Naval.,especial,,0
+gravisima,6,FALTAS GRAVÍSIMAS,Altere cualquier documento físico y/o digital de la Escuela Naval.,especial,,0
+gravisima,7,FALTAS GRAVÍSIMAS,Cometer actos que se tipifiquen como crimen cibernético.,especial,,0
+gravisima,8,FALTAS GRAVÍSIMAS,Cometer cualquier acto que esté tipificado como un delito en las leyes del país.,especial,,0
+gravisima,9,FALTAS GRAVÍSIMAS,"Faltarle el respeto a un Oficial de manera verbal, por escrito, por gestos, ademanes y acciones.",especial,,0
+gravisima,10,FALTAS GRAVÍSIMAS,Tener descendencia familiar comprobada.,especial,,0
+gravisima,11,FALTAS GRAVÍSIMAS,"Contraer matrimonio, unión de hecho o cohabitar.",especial,,0
+gravisima,12,FALTAS GRAVÍSIMAS,"Entrar de manera furtiva a las instalaciones de la Escuela Naval, cuyo acceso está prohibido.",especial,,0
+gravisima,13,FALTAS GRAVÍSIMAS,Evadirse del establecimiento.,especial,,0
+gravisima,14,FALTAS GRAVÍSIMAS,"Excederse en el goce de franco, licencia, permiso y/o vacaciones más de 24 horas.",especial,,0
+gravisima,15,FALTAS GRAVÍSIMAS,"Extraer de la Escuela Naval, armas, material de guerra o equipo militar.",especial,,0
+gravisima,16,FALTAS GRAVÍSIMAS,Extraviar armamento (no lo exime de responsabilidades penales y civiles).,especial,,0
+gravisima,17,FALTAS GRAVÍSIMAS,"Formar parte de asociaciones políticas, grupos armados al margen de la ley, maras u otros.",especial,,0
+gravisima,18,FALTAS GRAVÍSIMAS,Quebrantar el convenio suscrito con la Escuela Naval.,especial,,0
+gravisima,19,FALTAS GRAVÍSIMAS,Portación ilegal de armas.,especial,,0
+gravisima,20,FALTAS GRAVÍSIMAS,Hacer propaganda de carácter político.,especial,,0
+gravisima,21,FALTAS GRAVÍSIMAS,"Hacer rifas clandestinas, con el objeto de obtener un beneficio económico personal.",especial,,0
+gravisima,22,FALTAS GRAVÍSIMAS,"Ingresar bebidas alcohólicas estando de comisión, dentro del establecimiento o en actividades sociales programadas por la Escuela Naval.",especial,,0
+gravisima,23,FALTAS GRAVÍSIMAS,Ser sorprendido en estado de ebriedad.,especial,,0
+gravisima,24,FALTAS GRAVÍSIMAS,Insubordinarse.,especial,,0
+gravisima,25,FALTAS GRAVÍSIMAS,"Portar, almacenar o consumir drogas en el interior o exterior del plantel.",especial,,0
+gravisima,26,FALTAS GRAVÍSIMAS,Quien provoque accidente habiendo ingerido bebidas alcohólicas.,especial,,0
+gravisima,27,FALTAS GRAVÍSIMAS,Robo o hurto.,especial,,0
+gravisima,28,FALTAS GRAVÍSIMAS,"Sobornar a un Oficial, catedrático, especialista o tropa.",especial,,0
+gravisima,29,FALTAS GRAVÍSIMAS,Suplantarse en examen.,especial,,0
+gravisima,30,FALTAS GRAVÍSIMAS,Tener o tomar medicamentos no autorizados.,especial,,0
+gravisima,31,FALTAS GRAVÍSIMAS,Tener relación sentimental o noviazgo con personal de alta en la E.N.G. dentro y fuera del plantel (Que sean sorprendidos y/o confesos).,especial,,0
+gravisima,32,FALTAS GRAVÍSIMAS,"Tener relaciones sentimentales o noviazgo entre cadetes dentro y fuera de la E.N.G, asimismo con cadetes de la Escuela Politécnia y Escuela Militar de Aviación. (Que sean sorprendidos y/o confesos).",especial,,0
+gravisima,33,FALTAS GRAVÍSIMAS,Vender objetos o prendas propiedad del estado.,especial,,0
+gravisima,34,FALTAS GRAVÍSIMAS,Tener relaciones sexuales dentro y fuera del plantel con personal de alta en la E.N.G.,especial,,0
+gravisima,35,FALTAS GRAVÍSIMAS,Resultar en estado de gravidez (embarazada).,especial,,0
+gravisima,36,FALTAS GRAVÍSIMAS,"Visitar prostíbulos, clubes nocturnos estando uniformado.",especial,,0
+gravisima,37,FALTAS GRAVÍSIMAS,Hacerse perforaciones en cualquier parte del cuerpo.,especial,,0
+gravisima,38,FALTAS GRAVÍSIMAS,Realizarse tatuajes en cualquier parte del cuerpo.,especial,,0
+gravisima,39,FALTAS GRAVÍSIMAS,Homosexualismo.,especial,,0
+gravisima,40,FALTAS GRAVÍSIMAS,"Por conducta indecorosa (Escándalos en vía pública estando uniformado o de ropa civil, de franco y/o de guardia que denigre la dignidad como Cadete).",especial,,0
+gravisima,41,FALTAS GRAVÍSIMAS,"Mantener, distribuir y/o consumir cualquier tipo de estupefacientes.",especial,,0
+gravisima,42,FALTAS GRAVÍSIMAS,"Agredir y causar daños físicos a otro cadete, utilizando armas blancas, de fuego, arma de electrochoque y cualquier otro objeto que cause daño.",especial,,0
+gravisima,43,FALTAS GRAVÍSIMAS,Por causarse daños físicos así mismo de manera premeditada.,especial,,0
+gravisima,44,FALTAS GRAVÍSIMAS,"Escandalizar en la vía pública bajo efectos de licor, que provoque daños a terceros.",especial,,0
