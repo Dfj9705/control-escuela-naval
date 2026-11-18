@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Cadete extends Model
 {
@@ -44,5 +45,13 @@ class Cadete extends Model
     public function asignacionesSemestre(): HasMany
     {
         return $this->hasMany(AsignacionSemestre::class);
+    }
+
+    public function asignacionActual(): HasOne
+    {
+        return $this->hasOne(AsignacionSemestre::class)
+            ->whereHas('periodoAcademico', function ($query) {
+                $query->where('activo', true);
+            });
     }
 }

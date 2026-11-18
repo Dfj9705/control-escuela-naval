@@ -197,6 +197,7 @@ class CadeteResource extends Resource
                     'persona',
                     'grado',
                     'promocion',
+                    'asignacionActual.semestre',
                 ])
             )
             ->columns([
@@ -235,6 +236,19 @@ class CadeteResource extends Resource
                 Tables\Columns\TextColumn::make('promocion.numero')
                     ->label('Promoción')
                     ->sortable(),
+
+                Tables\Columns\TextColumn::make('semestre_actual')
+                    ->label('Semestre actual')
+                    ->getStateUsing(
+                        fn(Cadete $record): string =>
+                            $record->asignacionActual?->semestre?->nombre
+                            ?? 'Sin asignación'
+                    )
+                    ->badge()
+                    ->color(
+                        fn(string $state): string =>
+                            $state === 'Sin asignación' ? 'gray' : 'info'
+                    ),
 
                 Tables\Columns\TextColumn::make('estado')
                     ->label('Estado')
@@ -280,7 +294,7 @@ class CadeteResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\AsignacionesSemestreRelationManager::class,
         ];
     }
 
