@@ -1,0 +1,145 @@
+ body {
+        font-family: dejavusans;
+        font-size: 10pt;
+        color: #263445;
+    }
+
+    .institution,
+    .document-title {
+        color: #173a57;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .document-number, .subtitle{
+        text-align: center;
+    }
+
+    .section-title {
+        background-color: #edf2f7;
+        color: #173a57;
+        padding: 8px;
+        font-weight: bold;
+    }
+
+    .firmas {
+    margin-top: 45px;
+    width: 100%;
+}
+
+.firma {
+    display: inline-block;
+    width: 44%;
+    text-align: center;
+    vertical-align: top;
+}
+
+.firma-derecha {
+    margin-left: 8%;
+}
+
+.linea-firma {
+    border-top: 1px solid #334155;
+    padding-top: 8px;
+    text-align: center;
+}
+
+.espacio-firma {
+    height: 45px;
+}
+
+.conforme {
+    width: 55%;
+    margin: 40px auto 0 auto;
+    text-align: center;
+}
+
+.tabla-firmas {
+    width: 100%;
+    margin-top: 45px;
+    border-collapse: collapse;
+}
+
+.tabla-firmas td {
+    width: 50%;
+    text-align: center;
+    vertical-align: bottom;
+    padding: 0 15px;
+}
+
+.espacio-firma {
+    height: 45px;
+}
+
+.linea-firma {
+    border-top: 1px solid #334155;
+    padding-top: 8px;
+    text-align: center;
+}
+
+.escudo-institucional {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.escudo-institucional img {
+    width: 65px;
+    height: auto;
+}
+
+.header {
+    border-bottom: 2px solid #173a57;
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+}
+
+.tabla-encabezado {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-encabezado td {
+    border: none;
+    vertical-align: middle;
+}
+
+.columna-escudo {
+    width: 20%;
+    text-align: center;
+}
+
+.columna-institucion {
+    width: 80%;
+    text-align: left;
+    padding-left: 12px;
+}
+
+.escudo {
+    width: 65px;
+}
+
+.institution {
+    font-size: 13pt;
+    font-weight: bold;
+    color: #173a57;
+}
+
+.subtitle {
+    font-size: 8pt;
+    color: #475569;
+}
+
+.document-title {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #173a57;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.document-number {
+    font-size: 9pt;
+    color: #64748b;
+    text-align: center;
+    margin-top: 4px;
+}

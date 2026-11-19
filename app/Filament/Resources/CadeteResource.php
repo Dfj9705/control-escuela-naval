@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\CadeteResource\RelationManagers\AsignacionesPelotonRelationManager;
 
 class CadeteResource extends Resource
 {
@@ -295,6 +296,7 @@ class CadeteResource extends Resource
     {
         return [
             RelationManagers\AsignacionesSemestreRelationManager::class,
+            AsignacionesPelotonRelationManager::class,
         ];
     }
 

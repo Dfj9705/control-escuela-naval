@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
-
+use Carbon\CarbonInterface;
 class Cadete extends Model
 {
     use HasFactory;
@@ -54,4 +54,27 @@ class Cadete extends Model
                 $query->where('activo', true);
             });
     }
+
+    public function asignacionesPeloton(): HasMany
+    {
+        return $this->hasMany(CadetePeloton::class);
+    }
+
+
+    public function pelotonEnFecha(
+        CarbonInterface $fecha
+    ): ?CadetePeloton {
+        $dia = $fecha->toDateString();
+
+        return $this->asignacionesPeloton()
+            ->whereDate('fecha_inicio', '<=', $dia)
+            ->where(function ($query) use ($dia) {
+                $query
+                    ->whereNull('fecha_fin')
+                    ->orWhereDate('fecha_fin', '>=', $dia);
+            })
+            ->with('peloton')
+            ->first();
+    }
+
 }
