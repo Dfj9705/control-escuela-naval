@@ -149,4 +149,14 @@ class FaltaDisciplinariaResource extends Resource
             'index' => Pages\ListFaltaDisciplinarias::route('/'),
         ];
     }
+
+    public static function canViewAny(): bool
+    {
+        return auth()->user()?->can('faltas_disciplinarias.ver') ?? false;
+    }
+
+    public static function canView($record): bool
+    {
+        return auth()->user()?->can('faltas_disciplinarias.ver') ?? false;
+    }
 }
