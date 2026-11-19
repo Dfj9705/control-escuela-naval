@@ -88,4 +88,22 @@ class SancionDisciplinaria extends Model
     {
         return $this->estado !== self::ESTADO_ANULADA;
     }
+
+    public function puedeEnviarseAFirma(): bool
+    {
+        return $this->estado === self::ESTADO_REGISTRADA
+            && $this->tipo_sancion !== self::TIPO_ESPECIAL;
+    }
+
+    public function puedeEnviarseAConfirmacion(): bool
+    {
+        return $this->estado === self::ESTADO_PENDIENTE_FIRMA
+            && !empty($this->boleta_firmada);
+    }
+
+    public function contabilizaDemeritos(): bool
+    {
+        return $this->estado === self::ESTADO_CONFIRMADA
+            && $this->tipo_sancion === self::TIPO_DEMERITOS;
+    }
 }

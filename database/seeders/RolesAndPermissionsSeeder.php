@@ -65,6 +65,9 @@ class RolesAndPermissionsSeeder extends Seeder
             'pelotones.editar',
             'pelotones.eliminar',
             'cadete_pelotones.asignar',
+            'sanciones_disciplinarias.enviar_firma',
+            'sanciones_disciplinarias.confirmar',
+            'sanciones_disciplinarias.ver',
         ];
 
         foreach ($permissions as $permission) {
@@ -104,6 +107,10 @@ class RolesAndPermissionsSeeder extends Seeder
                 'pelotones.crear',
                 'pelotones.editar',
                 'cadete_pelotones.asignar',
+                'sanciones_disciplinarias.enviar_firma',
+                'sanciones_disciplinarias.confirmar',
+                'sanciones_disciplinarias.ver',
+
             ]);
 
         // Operador: registro y gestión documental
@@ -118,6 +125,10 @@ class RolesAndPermissionsSeeder extends Seeder
                 'pelotones.crear',
                 'pelotones.editar',
                 'cadete_pelotones.asignar',
+                'sanciones_disciplinarias.enviar_firma',
+                'sanciones_disciplinarias.confirmar',
+                'sanciones_disciplinarias.ver',
+
             ]);
 
         Role::findByName('consulta', 'web')

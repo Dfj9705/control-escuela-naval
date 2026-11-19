@@ -260,6 +260,49 @@ class SancionDisciplinariaResource extends Resource
                         ->dateTime('d/m/Y H:i'),
                 ])
                 ->columns(2),
+
+            \Filament\Infolists\Components\TextEntry::make(
+                'confirmadoPor.name'
+            )
+                ->label('Confirmado por')
+                ->placeholder('Sin confirmar'),
+
+            \Filament\Infolists\Components\TextEntry::make(
+                'confirmado_at'
+            )
+                ->label('Fecha de confirmación')
+                ->dateTime('d/m/Y H:i')
+                ->placeholder('Sin confirmar'),
+
+
+            \Filament\Infolists\Components\TextEntry::make(
+                'motivo_anulacion'
+            )
+                ->label('Motivo de anulación')
+                ->columnSpanFull()
+                ->visible(
+                    fn($record): bool =>
+                        $record->estado === SancionDisciplinaria::ESTADO_ANULADA
+                ),
+
+            \Filament\Infolists\Components\TextEntry::make(
+                'anuladoPor.name'
+            )
+                ->label('Anulado por')
+                ->visible(
+                    fn($record): bool =>
+                        $record->estado === SancionDisciplinaria::ESTADO_ANULADA
+                ),
+
+            \Filament\Infolists\Components\TextEntry::make(
+                'anulado_at'
+            )
+                ->label('Fecha de anulación')
+                ->dateTime('d/m/Y H:i')
+                ->visible(
+                    fn($record): bool =>
+                        $record->estado === SancionDisciplinaria::ESTADO_ANULADA
+                ),
         ]);
     }
 

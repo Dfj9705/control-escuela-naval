@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\CadeteResource\Pages;
 
 use App\Filament\Resources\CadeteResource;
+use App\Filament\Widgets\ResumenDisciplinarioCadete;
 use App\Models\Cadete;
 use Filament\Resources\Pages\EditRecord;
 use Illuminate\Database\Eloquent\Model;
@@ -98,5 +99,16 @@ class EditCadete extends EditRecord
     protected function getHeaderActions(): array
     {
         return [];
+    }
+
+    protected function getHeaderWidgets(): array
+    {
+        if (!auth()->user()?->can('sanciones_disciplinarias.ver')) {
+            return [];
+        }
+
+        return [
+            ResumenDisciplinarioCadete::class,
+        ];
     }
 }

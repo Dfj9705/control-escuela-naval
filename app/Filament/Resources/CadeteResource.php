@@ -297,6 +297,7 @@ class CadeteResource extends Resource
         return [
             RelationManagers\AsignacionesSemestreRelationManager::class,
             AsignacionesPelotonRelationManager::class,
+            RelationManagers\SancionesDisciplinariasRelationManager::class,
         ];
     }
 
