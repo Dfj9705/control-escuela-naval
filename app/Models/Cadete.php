@@ -191,4 +191,45 @@ class Cadete extends Model
             ->sum('cantidad_aplicada');
     }
 
+
+    public function situacionDemeritosEnPeriodo(
+        PeriodoAcademico $periodo
+    ): ?array {
+        // Buscar la asignación del cadete en el período.
+        $asignacion = $this->asignacionesSemestre()
+            ->where('periodo_academico_id', $periodo->id)
+            ->with('semestre')
+            ->first();
+
+        // No asumir un semestre si no existe asignación.
+        if (!$asignacion || !$asignacion->semestre) {
+            return null;
+        }
+
+        $semestre = $asignacion->semestre;
+        $limite = $semestre->limiteDemeritos();
+
+        // No asumir un límite inexistente.
+        if ($limite === null) {
+            return null;
+        }
+
+        $acumulados = $this->totalDemeritosEnPeriodo($periodo);
+
+        return [
+            'periodo_academico_id' => $periodo->id,
+            'semestre' => $semestre->nombre,
+            'semestre_numero' => $semestre->numero,
+            'limite' => $limite,
+            'acumulados' => $acumulados,
+            'restantes' => max(0, $limite - $acumulados),
+            'excedidos' => max(0, $acumulados - $limite),
+            'porcentaje' => round(
+                ($acumulados / $limite) * 100,
+                2
+            ),
+        ];
+    }
+
+
 }
