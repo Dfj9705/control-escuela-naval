@@ -3,6 +3,7 @@
 namespace App\Services\Disciplina;
 
 use App\Models\SancionDisciplinaria;
+use DB;
 use Illuminate\Support\Facades\View;
 use Illuminate\Validation\ValidationException;
 use Mpdf\HTMLParserMode;
@@ -68,8 +69,34 @@ class GenerarBoletaDemeritos
         }
 
         // Deméritos confirmados en el período.
-        $demeritosAcumulados = $sancion->cadete
-            ->demeritosPreviosASancion($sancion, $periodo);
+
+        $demeritosAcumulados = DB::transaction(
+            function () use ($sancion, $periodo): int {
+
+                $registro = SancionDisciplinaria::query()
+                    ->lockForUpdate()
+                    ->findOrFail($sancion->id);
+
+                // Si el acumulado ya fue guardado,
+                // no lo modificamos.
+                if ($registro->demeritos_acumulados_emision !== null) {
+                    return (int) $registro->demeritos_acumulados_emision;
+                }
+
+                // Primera emisión: calcular el acumulado histórico.
+                $acumulado = $registro->cadete
+                    ->demeritosPreviosASancion($registro, $periodo);
+
+                // Guardar el acumulado y la fecha de emisión.
+                $registro->demeritos_acumulados_emision = $acumulado;
+                $registro->demeritos_emitida_at = now();
+
+                $registro->save();
+
+                return $acumulado;
+            }
+        );
+
 
         $escudo = public_path('images/eng_logo.png');
 

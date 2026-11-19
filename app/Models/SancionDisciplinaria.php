@@ -27,6 +27,8 @@ class SancionDisciplinaria extends Model
         'responsable_id',
         'fecha_falta',
         'descripcion_hechos',
+        'demeritos_acumulados_emision',
+        'demeritos_emitida_at',
     ];
 
     protected $casts = [
@@ -34,7 +36,10 @@ class SancionDisciplinaria extends Model
         'cantidad_aplicada' => 'integer',
         'confirmado_at' => 'datetime',
         'anulado_at' => 'datetime',
+        'demeritos_acumulados_emision' => 'integer',
+        'demeritos_emitida_at' => 'datetime',
     ];
+
 
     // Cadete sancionado
     public function cadete(): BelongsTo
