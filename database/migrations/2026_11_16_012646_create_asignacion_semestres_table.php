@@ -39,6 +39,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('asignacion_semestres');
+        Schema::dropIfExists('asignaciones_semestre');
     }
 };
