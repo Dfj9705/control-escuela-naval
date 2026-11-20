@@ -2,19 +2,28 @@
 
 namespace App\Filament\Widgets;
 
+use App\Filament\Resources\CadeteResource;
 use App\Models\Cadete;
 use App\Models\PeriodoAcademico;
 use Filament\Widgets\StatsOverviewWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
+use Livewire\Attributes\Locked;
 
 class ResumenDisciplinarioCadete extends StatsOverviewWidget
 {
+    #[Locked]
     public ?Cadete $record = null;
+
+    public static function canView(): bool
+    {
+        return CadeteResource::canViewAny()
+            && (auth()->user()?->can('sanciones_disciplinarias.ver') ?? false);
+    }
 
 
     protected function getStats(): array
     {
-        if (!$this->record) {
+        if (!static::canView() || !$this->record || !CadeteResource::canEdit($this->record)) {
             return [];
         }
 

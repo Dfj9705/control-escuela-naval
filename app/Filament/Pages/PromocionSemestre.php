@@ -153,6 +153,7 @@ class PromocionSemestre extends Page
     public function confirmarPromocionAction(): Actions\Action
     {
         return Actions\Action::make('confirmarPromocion')
+            ->authorize(fn (): bool => static::canAccess())
             ->label('Promover cadetes')
             ->icon('heroicon-o-arrow-trending-up')
             ->color('success')

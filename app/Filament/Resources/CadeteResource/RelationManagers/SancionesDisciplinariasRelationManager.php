@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\CadeteResource\RelationManagers;
 
+use App\Filament\Resources\CadeteResource;
 use App\Filament\Resources\SancionDisciplinariaResource;
 use App\Models\SancionDisciplinaria;
 use Filament\Forms\Form;
@@ -22,9 +23,22 @@ class SancionesDisciplinariasRelationManager extends RelationManager
         $ownerRecord,
         string $pageClass
     ): bool {
-        return auth()->user()?->can(
-            'sanciones_disciplinarias.ver'
-        ) ?? false;
+        return CadeteResource::canEdit($ownerRecord)
+            && (auth()->user()?->can(
+                'sanciones_disciplinarias.ver'
+            ) ?? false);
+    }
+
+    public function mount(): void
+    {
+        abort_unless(static::canViewForRecord($this->getOwnerRecord(), $this->getPageClass()), 403);
+
+        parent::mount();
+    }
+
+    public function hydrate(): void
+    {
+        abort_unless(static::canViewForRecord($this->getOwnerRecord(), $this->getPageClass()), 403);
     }
 
     public function form(Form $form): Form

@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\CadeteResource\RelationManagers;
 
+use App\Filament\Resources\CadeteResource;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\RelationManager;
@@ -14,6 +15,23 @@ use Illuminate\Validation\ValidationException;
 class AsignacionesSemestreRelationManager extends RelationManager
 {
     protected static string $relationship = 'asignacionesSemestre';
+
+    public static function canViewForRecord(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): bool
+    {
+        return CadeteResource::canEdit($ownerRecord);
+    }
+
+    public function mount(): void
+    {
+        abort_unless(static::canViewForRecord($this->getOwnerRecord(), $this->getPageClass()), 403);
+
+        parent::mount();
+    }
+
+    public function hydrate(): void
+    {
+        abort_unless(static::canViewForRecord($this->getOwnerRecord(), $this->getPageClass()), 403);
+    }
 
     public function form(Form $form): Form
     {
@@ -49,6 +67,12 @@ class AsignacionesSemestreRelationManager extends RelationManager
                     ->native(false),
             ])
             ->columns(2);
+    }
+
+    protected function canCreate(): bool
+    {
+        return CadeteResource::canEdit($this->getOwnerRecord())
+            && (auth()->user()?->can('asignaciones.crear') ?? false);
     }
 
     public function table(Table $table): Table

@@ -152,6 +152,11 @@ class RoleResource extends Resource
         return auth()->user()?->can('roles.ver') ?? false;
     }
 
+    public static function canView($record): bool
+    {
+        return static::canViewAny();
+    }
+
     public static function canCreate(): bool
     {
         return auth()->user()?->can('roles.crear') ?? false;
@@ -161,6 +166,11 @@ class RoleResource extends Resource
     {
         return auth()->user()?->can('roles.editar')
             && $record->name !== 'superadministrador';
+    }
+
+    public static function canDeleteAny(): bool
+    {
+        return false;
     }
 
     public static function canDelete($record): bool

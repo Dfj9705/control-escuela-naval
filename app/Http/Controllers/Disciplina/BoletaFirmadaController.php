@@ -17,6 +17,8 @@ class BoletaFirmadaController extends Controller
             403
         );
 
+        abort_if($sancion->estado === SancionDisciplinaria::ESTADO_ANULADA, 403);
+
         abort_if(
             empty($sancion->boleta_firmada),
             404,

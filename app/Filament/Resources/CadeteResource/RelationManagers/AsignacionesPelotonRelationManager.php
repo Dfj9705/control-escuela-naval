@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\CadeteResource\RelationManagers;
 
+use App\Filament\Resources\CadeteResource;
 use App\Models\Peloton;
 use App\Services\Cadetes\AsignarPeloton;
 use Filament\Forms;
@@ -17,6 +18,23 @@ class AsignacionesPelotonRelationManager extends RelationManager
     protected static string $relationship = 'asignacionesPeloton';
 
     protected static ?string $title = 'Historial de pelotones';
+
+    public static function canViewForRecord(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): bool
+    {
+        return CadeteResource::canEdit($ownerRecord);
+    }
+
+    public function mount(): void
+    {
+        abort_unless(static::canViewForRecord($this->getOwnerRecord(), $this->getPageClass()), 403);
+
+        parent::mount();
+    }
+
+    public function hydrate(): void
+    {
+        abort_unless(static::canViewForRecord($this->getOwnerRecord(), $this->getPageClass()), 403);
+    }
 
     public function form(Form $form): Form
     {
@@ -54,10 +72,7 @@ class AsignacionesPelotonRelationManager extends RelationManager
                     ->label('Asignar pelotón')
                     ->icon('heroicon-o-plus-circle')
                     ->color('primary')
-                    ->visible(
-                        fn(): bool =>
-                            auth()->user()?->can('cadete_pelotones.asignar') ?? false
-                    )
+                    ->authorize(fn (): bool => auth()->user()?->can('cadete_pelotones.asignar') ?? false)
                     ->form([
                         Forms\Components\Select::make('peloton_id')
                             ->label('Pelotón')
@@ -77,11 +92,6 @@ class AsignacionesPelotonRelationManager extends RelationManager
                             ->required(),
                     ])
                     ->action(function (array $data): void {
-                        abort_unless(
-                            auth()->user()?->can('cadete_pelotones.asignar'),
-                            403
-                        );
-
                         try {
 
                             app(AsignarPeloton::class)->handle(

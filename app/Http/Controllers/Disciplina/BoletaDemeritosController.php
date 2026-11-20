@@ -19,6 +19,10 @@ class BoletaDemeritosController extends Controller
             'No tiene autorización para imprimir boletas.'
         );
 
+        abort_unless(auth()->user()?->can('sanciones_disciplinarias.ver'), 403);
+        abort_unless($sancion->tipo_sancion === SancionDisciplinaria::TIPO_DEMERITOS, 404);
+        abort_if($sancion->estado === SancionDisciplinaria::ESTADO_ANULADA, 403);
+
         $pdf = $generador->generar($sancion);
 
         return response($pdf, 200, [

@@ -143,6 +143,11 @@ class PeriodoAcademicoResource extends Resource
         return auth()->user()?->hasRole('superadministrador') ?? false;
     }
 
+    public static function canView($record): bool
+    {
+        return static::canViewAny();
+    }
+
     public static function canCreate(): bool
     {
         return auth()->user()?->hasRole('superadministrador') ?? false;

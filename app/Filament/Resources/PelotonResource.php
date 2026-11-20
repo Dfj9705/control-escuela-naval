@@ -37,6 +37,11 @@ class PelotonResource extends Resource
         return auth()->user()?->can('pelotones.ver') ?? false;
     }
 
+    public static function canView(Model $record): bool
+    {
+        return static::canViewAny();
+    }
+
     public static function canCreate(): bool
     {
         return auth()->user()?->can('pelotones.crear') ?? false;
@@ -45,6 +50,11 @@ class PelotonResource extends Resource
     public static function canEdit(Model $record): bool
     {
         return auth()->user()?->can('pelotones.editar') ?? false;
+    }
+
+    public static function canDeleteAny(): bool
+    {
+        return false;
     }
 
     public static function canDelete(Model $record): bool

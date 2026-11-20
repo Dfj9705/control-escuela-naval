@@ -25,13 +25,13 @@ class ViewSancionDisciplinaria extends ViewRecord
     {
         return [
             Actions\Action::make('imprimirBoleta')
+                ->authorize(fn (): bool => auth()->user()?->can('sanciones_disciplinarias.imprimir') ?? false)
                 ->label('Imprimir boleta')
                 ->icon('heroicon-o-printer')
                 ->color('primary')
                 ->visible(
                     fn(): bool =>
-                        auth()->user()?->can('sanciones_disciplinarias.imprimir')
-                        && $this->record->tipo_sancion ===
+                        $this->record->tipo_sancion ===
                         SancionDisciplinaria::TIPO_HORAS
                         && $this->record->estado !==
                         SancionDisciplinaria::ESTADO_ANULADA
@@ -46,13 +46,13 @@ class ViewSancionDisciplinaria extends ViewRecord
 
 
             Actions\Action::make('enviarAFirma')
+                ->authorize(fn (): bool => auth()->user()?->can('sanciones_disciplinarias.enviar_firma') ?? false)
                 ->label('Enviar a firma')
                 ->icon('heroicon-o-document-check')
                 ->color('warning')
                 ->visible(
                     fn(): bool =>
-                        (auth()->user()?->can('sanciones_disciplinarias.enviar_firma') ?? false)
-                        && $this->record->puedeEnviarseAFirma()
+                        $this->record->puedeEnviarseAFirma()
                 )
                 ->requiresConfirmation()
                 ->modalHeading('Enviar sanción a firma')
@@ -88,13 +88,13 @@ class ViewSancionDisciplinaria extends ViewRecord
                 }),
 
             Actions\Action::make('adjuntarBoleta')
+                ->authorize(fn (): bool => auth()->user()?->can('sanciones_disciplinarias.adjuntar') ?? false)
                 ->label('Adjuntar boleta firmada')
                 ->icon('heroicon-o-paper-clip')
                 ->color('success')
                 ->visible(
                     fn(): bool =>
-                        (auth()->user()?->can('sanciones_disciplinarias.adjuntar') ?? false)
-                        && $this->record->estado ===
+                        $this->record->estado ===
                         SancionDisciplinaria::ESTADO_PENDIENTE_FIRMA
                 )
                 ->form([
@@ -154,13 +154,13 @@ class ViewSancionDisciplinaria extends ViewRecord
                 }),
 
             Actions\Action::make('confirmarSancion')
+                ->authorize(fn (): bool => auth()->user()?->can('sanciones_disciplinarias.confirmar') ?? false)
                 ->label('Confirmar sanción')
                 ->icon('heroicon-o-check-circle')
                 ->color('success')
                 ->visible(
                     fn(): bool =>
-                        (auth()->user()?->can('sanciones_disciplinarias.confirmar') ?? false)
-                        && $this->record->puedeConfirmarse()
+                        $this->record->puedeConfirmarse()
                 )
                 ->requiresConfirmation()
                 ->modalHeading('Confirmar sanción disciplinaria')
@@ -206,13 +206,13 @@ class ViewSancionDisciplinaria extends ViewRecord
                 }),
 
             Actions\Action::make('verBoletaFirmada')
+                ->authorize(fn (): bool => auth()->user()?->can('sanciones_disciplinarias.ver') ?? false)
                 ->label('Ver boleta firmada')
                 ->icon('heroicon-o-document-magnifying-glass')
                 ->color('gray')
                 ->visible(
                     fn(): bool =>
-                        (auth()->user()?->can('sanciones_disciplinarias.ver') ?? false)
-                        && !empty($this->record->boleta_firmada)
+                        !empty($this->record->boleta_firmada)
                         && $this->record->estado !==
                         SancionDisciplinaria::ESTADO_ANULADA
                 )
@@ -226,13 +226,13 @@ class ViewSancionDisciplinaria extends ViewRecord
 
 
             Actions\Action::make('anularSancion')
+                ->authorize(fn (): bool => auth()->user()?->can('sanciones_disciplinarias.anular') ?? false)
                 ->label('Anular sanción')
                 ->icon('heroicon-o-x-circle')
                 ->color('danger')
                 ->visible(
                     fn(): bool =>
-                        (auth()->user()?->can('sanciones_disciplinarias.anular') ?? false)
-                        && $this->record->puedeAnularse()
+                        $this->record->puedeAnularse()
                 )
                 ->form([
                     Textarea::make('motivo_anulacion')
@@ -295,6 +295,7 @@ class ViewSancionDisciplinaria extends ViewRecord
 
 
             Actions\Action::make('imprimirBoletaDemeritos')
+                ->authorize(fn (): bool => auth()->user()?->can('sanciones_disciplinarias.imprimir') ?? false)
                 ->label('Imprimir boleta de deméritos')
                 ->icon('heroicon-o-printer')
                 ->color('primary')
@@ -304,9 +305,6 @@ class ViewSancionDisciplinaria extends ViewRecord
                         SancionDisciplinaria::TIPO_DEMERITOS
                         && $this->record->estado !==
                         SancionDisciplinaria::ESTADO_ANULADA
-                        && auth()->user()?->can(
-                            'sanciones_disciplinarias.imprimir'
-                        )
                 )
                 ->url(fn(): string => route(
                     'disciplina.boleta-demeritos',

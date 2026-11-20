@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\OficialResource\RelationManagers;
 
+use App\Filament\Resources\OficialResource;
 use App\Models\AsignacionCargoOficial;
 use App\Services\Oficiales\GuardarAsignacionCargo;
 use Filament\Forms;
@@ -20,6 +21,23 @@ class AsignacionesCargoRelationManager extends RelationManager
     protected static ?string $modelLabel = 'Asignación de cargo';
 
     protected static ?string $pluralModelLabel = 'Asignaciones de cargos';
+
+    public static function canViewForRecord(\Illuminate\Database\Eloquent\Model $ownerRecord, string $pageClass): bool
+    {
+        return OficialResource::canEdit($ownerRecord);
+    }
+
+    public function mount(): void
+    {
+        abort_unless(static::canViewForRecord($this->getOwnerRecord(), $this->getPageClass()), 403);
+
+        parent::mount();
+    }
+
+    public function hydrate(): void
+    {
+        abort_unless(static::canViewForRecord($this->getOwnerRecord(), $this->getPageClass()), 403);
+    }
 
     public function form(Form $form): Form
     {
@@ -139,6 +157,7 @@ class AsignacionesCargoRelationManager extends RelationManager
 
             ->headerActions([
                 Tables\Actions\Action::make('asignarCargo')
+                    ->authorize(fn (): bool => OficialResource::canEdit($this->getOwnerRecord()))
                     ->label('Asignar cargo')
                     ->icon('heroicon-o-plus-circle')
                     ->color('primary')
@@ -225,6 +244,7 @@ class AsignacionesCargoRelationManager extends RelationManager
 
 
                 Tables\Actions\Action::make('finalizarCargo')
+                    ->authorize(fn (): bool => OficialResource::canEdit($this->getOwnerRecord()))
                     ->label('Finalizar')
                     ->icon('heroicon-o-calendar-days')
                     ->color('warning')
