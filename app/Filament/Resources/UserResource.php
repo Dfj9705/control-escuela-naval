@@ -37,6 +37,52 @@ class UserResource extends Resource
             ->schema([
                 Forms\Components\Section::make('Información del usuario')
                     ->schema([
+
+
+                        Forms\Components\Select::make('persona_id')
+                            ->label('Persona asociada')
+                            ->relationship(
+                                name: 'persona',
+                                titleAttribute: 'catalogo',
+
+                                modifyQueryUsing: fn(Builder $query, ?User $record) =>
+                                    $query->where(function (Builder $query) use ($record) {
+                                        $query->whereDoesntHave('usuario');
+
+                                        if ($record?->persona_id) {
+                                            $query->orWhere('id', $record->persona_id);
+                                        }
+                                    })
+
+                            )
+                            ->getOptionLabelFromRecordUsing(
+                                fn($record): string =>
+                                    $record->nombre_completo .
+                                    ($record->catalogo ? " — {$record->catalogo}" : '')
+                            )
+                            ->searchable([
+                                'catalogo',
+                                'primer_nombre',
+                                'segundo_nombre',
+                                'primer_apellido',
+                                'segundo_apellido',
+                            ])
+                            ->live()
+                            ->afterStateUpdated(function ($state, Forms\Set $set): void {
+                                if (blank($state)) {
+                                    return;
+                                }
+
+                                $persona = \App\Models\Persona::find($state);
+
+                                if ($persona) {
+                                    $set('name', $persona->nombre_completo);
+                                }
+                            })
+                            ->preload()
+                            ->nullable()
+                            ->helperText('Selecciona la persona a la que pertenece esta cuenta.'),
+
                         Forms\Components\TextInput::make('name')
                             ->label('Nombre completo')
                             ->required()
@@ -107,6 +153,24 @@ class UserResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->weight('bold'),
+
+                Tables\Columns\TextColumn::make('persona.nombre_completo')
+                    ->label('Persona asociada')
+                    ->placeholder('Sin asociar')
+                    ->searchable(
+                        query: function (Builder $query, string $search): Builder {
+                            return $query->whereHas('persona', function (Builder $query) use ($search) {
+                                $query->where(function (Builder $query) use ($search) {
+                                    $query->where('catalogo', 'like', "%{$search}%")
+                                        ->orWhere('primer_nombre', 'like', "%{$search}%")
+                                        ->orWhere('segundo_nombre', 'like', "%{$search}%")
+                                        ->orWhere('primer_apellido', 'like', "%{$search}%")
+                                        ->orWhere('segundo_apellido', 'like', "%{$search}%");
+                                });
+                            });
+                        }
+                    )
+                    ->toggleable(),
 
                 Tables\Columns\TextColumn::make('email')
                     ->label('Correo electrónico')

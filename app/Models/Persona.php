@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Persona extends Model
 {
@@ -44,5 +45,20 @@ class Persona extends Model
         ])
             ->filter(fn($valor) => filled($valor))
             ->implode(' ');
+    }
+
+    public function usuario(): HasOne
+    {
+        return $this->hasOne(User::class);
+    }
+
+    public function cadete(): HasOne
+    {
+        return $this->hasOne(Cadete::class);
+    }
+
+    public function oficial(): HasOne
+    {
+        return $this->hasOne(Oficial::class);
     }
 }

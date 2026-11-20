@@ -24,4 +24,9 @@ class Grado extends Model
     {
         return $this->hasMany(Cadete::class);
     }
+
+    public function oficiales(): HasMany
+    {
+        return $this->hasMany(Oficial::class);
+    }
 }
