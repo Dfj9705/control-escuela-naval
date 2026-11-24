@@ -231,5 +231,10 @@ class Cadete extends Model
         ];
     }
 
+    public function meritosDisciplinarios(): HasMany
+    {
+        return $this->hasMany(MeritoDisciplinario::class);
+    }
+
 
 }
