@@ -2,6 +2,7 @@
 
 namespace App\Filament\Pages;
 
+use App\Services\Disciplina\GenerarReporteConducta;
 use Filament\Pages\Page;
 use App\Models\PeriodoAcademico;
 use App\Models\Semestre;
@@ -12,6 +13,10 @@ use App\Models\SancionDisciplinaria;
 use Illuminate\Database\Eloquent\Builder;
 use App\Models\MeritoDisciplinario;
 use App\Services\CalcularConductaMensual;
+use App\Services\Disciplina\GenerarReporteDisciplinario;
+use Filament\Actions\Action;
+use Filament\Notifications\Notification;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class ReporteDisciplinario extends Page
 {
@@ -58,6 +63,25 @@ class ReporteDisciplinario extends Page
             'semestre_id' => null,
         ]);
     }
+
+
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            Action::make('exportarPdf')
+                ->label('Exportar PDF')
+                ->icon('heroicon-o-document-arrow-down')
+                ->color('danger')
+                ->authorize(fn() => static::canAccess())
+                ->action(fn() => match ($this->reporteActivo) {
+                    'general' => $this->exportarReporteDisciplinarioPdf(),
+                    'conducta' => $this->exportarReporteConductaPdf(),
+                    default => null,
+                }),
+        ];
+    }
+
 
     public function form(Form $form): Form
     {
@@ -555,6 +579,126 @@ class ReporteDisciplinario extends Page
             ])
             ->values()
             ->all();
+    }
+
+
+    public function exportarReporteDisciplinarioPdf(): ?StreamedResponse
+    {
+        abort_unless(static::canAccess(), 403);
+
+        $periodo = PeriodoAcademico::find(
+            $this->data['periodo_academico_id'] ?? null
+        );
+
+        if (!$periodo) {
+            Notification::make()
+                ->title('Seleccione un período académico')
+                ->warning()
+                ->send();
+
+            return null;
+        }
+
+        $semestre = Semestre::find(
+            $this->data['semestre_id'] ?? null
+        );
+
+        $resultados = $this->obtenerResultados();
+
+        if (empty($resultados)) {
+            Notification::make()
+                ->title('No hay información para exportar')
+                ->warning()
+                ->send();
+
+            return null;
+        }
+
+        $resumen = $this->obtenerResumen($resultados);
+
+        $pdf = app(GenerarReporteDisciplinario::class)
+            ->generar(
+                $periodo,
+                $resultados,
+                $resumen,
+                $semestre?->nombre
+            );
+
+        $nombre = sprintf(
+            'reporte-disciplinario-%s-periodo-%s.pdf',
+            $periodo->anio,
+            $periodo->numero
+        );
+
+        return response()->streamDownload(
+            function () use ($pdf) {
+                echo $pdf;
+            },
+            $nombre,
+            [
+                'Content-Type' => 'application/pdf',
+            ]
+        );
+    }
+
+
+    public function exportarReporteConductaPdf(): ?StreamedResponse
+    {
+        abort_unless(static::canAccess(), 403);
+
+        $periodo = PeriodoAcademico::find(
+            $this->data['periodo_academico_id'] ?? null
+        );
+
+        if (!$periodo) {
+            Notification::make()
+                ->title('Seleccione un período académico')
+                ->warning()
+                ->send();
+
+            return null;
+        }
+
+        $semestre = Semestre::find(
+            $this->data['semestre_id'] ?? null
+        );
+
+        $meses = $this->obtenerMesesPeriodo();
+
+        $calificaciones = $this->obtenerCalificacionesConducta();
+
+        if (empty($calificaciones) || empty($meses)) {
+            Notification::make()
+                ->title('No hay información para exportar')
+                ->warning()
+                ->send();
+
+            return null;
+        }
+
+        $pdf = app(GenerarReporteConducta::class)
+            ->generar(
+                $periodo,
+                $meses,
+                $calificaciones,
+                $semestre?->nombre
+            );
+
+        $nombre = sprintf(
+            'reporte-conducta-%s-periodo-%s.pdf',
+            $periodo->anio,
+            $periodo->numero
+        );
+
+        return response()->streamDownload(
+            function () use ($pdf) {
+                echo $pdf;
+            },
+            $nombre,
+            [
+                'Content-Type' => 'application/pdf',
+            ]
+        );
     }
 
 

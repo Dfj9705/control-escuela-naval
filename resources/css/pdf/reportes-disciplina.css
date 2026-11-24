@@ -1,0 +1,170 @@
+
+body {
+    font-family: dejavusans, sans-serif;
+    font-size: 9pt;
+    color: #1e293b;
+}
+
+.tabla-encabezado {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+}
+
+.columna-escudo {
+    width: 15%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.columna-institucion {
+    width: 70%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.columna-vacia {
+    width: 15%;
+}
+
+.escudo {
+    width: 22mm;
+}
+
+.institution {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #16324f;
+}
+
+.subtitle {
+    font-size: 9pt;
+    margin-top: 3px;
+}
+
+.document-title {
+    text-align: center;
+    font-size: 13pt;
+    font-weight: bold;
+    margin-top: 12px;
+    margin-bottom: 5px;
+}
+
+.document-description {
+    text-align: center;
+    font-size: 9pt;
+    color: #475569;
+    margin-bottom: 12px;
+}
+
+.tabla-resumen {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.tabla-resumen td {
+    width: 16.66%;
+    border: 1px solid #cbd5e1;
+    padding: 8px;
+    text-align: center;
+    background-color: #f8fafc;
+}
+
+.resumen-label {
+    font-size: 8pt;
+    color: #475569;
+}
+
+.resumen-valor {
+    font-size: 16pt;
+    font-weight: bold;
+    color: #16324f;
+}
+
+.tabla-reporte {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8pt;
+}
+
+.tabla-reporte th {
+    background-color: #16324f;
+    color: #ffffff;
+    border: 1px solid #16324f;
+    padding: 6px 4px;
+    font-weight: bold;
+}
+
+.tabla-reporte td {
+    border: 1px solid #cbd5e1;
+    padding: 5px 4px;
+    vertical-align: middle;
+}
+
+.fila-alterna {
+    background-color: #f1f5f9;
+}
+
+.centro {
+    text-align: center;
+}
+
+.izquierda {
+    text-align: left;
+}
+
+.negrita {
+    font-weight: bold;
+}
+
+.texto-meritos {
+    color: #166534;
+    font-weight: bold;
+}
+
+.nota-reporte {
+    font-size: 8pt;
+    color: #64748b;
+    margin-top: 10px;
+}
+
+
+.titulo-semestre {
+    background-color: #e2e8f0;
+    color: #16324f;
+    font-size: 10pt;
+    font-weight: bold;
+    padding: 8px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.nota-mensual {
+    text-align: center;
+    width: 7%;
+}
+
+.nota-futura {
+    color: #94a3b8;
+    text-align: center;
+}
+
+.promedio-conducta {
+    background-color: #e2e8f0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.aviso-provisional {
+    border: 1px solid #cbd5e1;
+    background-color: #f8fafc;
+    padding: 8px;
+    margin-bottom: 10px;
+    font-size: 8pt;
+    text-align: center;
+}
+
+.separador-semestre {
+    height: 12px;
+}
