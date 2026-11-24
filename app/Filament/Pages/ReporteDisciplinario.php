@@ -17,6 +17,9 @@ use App\Services\Disciplina\GenerarReporteDisciplinario;
 use Filament\Actions\Action;
 use Filament\Notifications\Notification;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use App\Services\Disciplina\GenerarReporteDisciplinarioExcel;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use App\Services\Disciplina\GenerarReporteConductaExcel;
 
 class ReporteDisciplinario extends Page
 {
@@ -66,6 +69,8 @@ class ReporteDisciplinario extends Page
 
 
 
+
+
     protected function getHeaderActions(): array
     {
         return [
@@ -79,8 +84,20 @@ class ReporteDisciplinario extends Page
                     'conducta' => $this->exportarReporteConductaPdf(),
                     default => null,
                 }),
+
+            Action::make('exportarExcel')
+                ->label('Exportar Excel')
+                ->icon('heroicon-o-table-cells')
+                ->color('success')
+                ->authorize(fn() => static::canAccess())
+                ->action(fn() => match ($this->reporteActivo) {
+                    'general' => $this->exportarReporteDisciplinarioExcel(),
+                    'conducta' => $this->exportarReporteConductaExcel(),
+                    default => null,
+                }),
         ];
     }
+
 
 
     public function form(Form $form): Form
@@ -697,6 +714,140 @@ class ReporteDisciplinario extends Page
             $nombre,
             [
                 'Content-Type' => 'application/pdf',
+            ]
+        );
+    }
+
+
+    public function exportarReporteDisciplinarioExcel(): ?StreamedResponse
+    {
+        abort_unless(static::canAccess(), 403);
+
+        $periodo = PeriodoAcademico::find(
+            $this->data['periodo_academico_id'] ?? null
+        );
+
+        if (!$periodo) {
+            Notification::make()
+                ->title('Seleccione un período académico')
+                ->warning()
+                ->send();
+
+            return null;
+        }
+
+        $semestre = Semestre::find(
+            $this->data['semestre_id'] ?? null
+        );
+
+        $resultados = $this->obtenerResultados();
+
+        if (empty($resultados)) {
+            Notification::make()
+                ->title('No hay información para exportar')
+                ->warning()
+                ->send();
+
+            return null;
+        }
+
+        $resumen = $this->obtenerResumen($resultados);
+
+        $excel = app(GenerarReporteDisciplinarioExcel::class)
+            ->generar(
+                $periodo,
+                $resultados,
+                $resumen,
+                $semestre?->nombre
+            );
+
+        $nombre = sprintf(
+            'reporte-disciplinario-%s-periodo-%s.xlsx',
+            $periodo->anio,
+            $periodo->numero
+        );
+
+        return response()->streamDownload(
+            function () use ($excel) {
+                try {
+                    $writer = new Xlsx($excel);
+
+                    $writer->save('php://output');
+                } finally {
+                    $excel->disconnectWorksheets();
+                }
+            },
+            $nombre,
+            [
+                'Content-Type' =>
+                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            ]
+        );
+    }
+
+
+    public function exportarReporteConductaExcel(): ?StreamedResponse
+    {
+        abort_unless(static::canAccess(), 403);
+
+        $periodo = PeriodoAcademico::find(
+            $this->data['periodo_academico_id'] ?? null
+        );
+
+        if (!$periodo) {
+            Notification::make()
+                ->title('Seleccione un período académico')
+                ->warning()
+                ->send();
+
+            return null;
+        }
+
+        $semestre = Semestre::find(
+            $this->data['semestre_id'] ?? null
+        );
+
+        $meses = $this->obtenerMesesPeriodo();
+
+        $calificaciones = $this->obtenerCalificacionesConducta();
+
+        if (empty($calificaciones) || empty($meses)) {
+            Notification::make()
+                ->title('No hay información para exportar')
+                ->warning()
+                ->send();
+
+            return null;
+        }
+
+        $excel = app(GenerarReporteConductaExcel::class)
+            ->generar(
+                $periodo,
+                $meses,
+                $calificaciones,
+                $semestre?->nombre
+            );
+
+        $nombre = sprintf(
+            'reporte-conducta-%s-periodo-%s.xlsx',
+            $periodo->anio,
+            $periodo->numero
+        );
+
+        return response()->streamDownload(
+            function () use ($excel) {
+                try {
+                    $writer = new Xlsx($excel);
+
+                    $writer->save('php://output');
+                } finally {
+                    $excel->disconnectWorksheets();
+                }
+            },
+            $nombre,
+            [
+                'Content-Type' =>
+                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
             ]
         );
     }
